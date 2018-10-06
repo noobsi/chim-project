@@ -4,6 +4,8 @@
 
 * Rail version: 4.2.3
 
+* Database: SQLite3
+
 Useful links:
 
 * Trello: https://trello.com/b/Ovcwf02o/road-to-ge

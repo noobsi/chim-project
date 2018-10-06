@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bird_name: MyString
+  bird_info: MyText
+  bird_price: 1
+  bird_voice: MyString
+  species: 
+
+two:
+  bird_name: MyString
+  bird_info: MyText
+  bird_price: 1
+  bird_voice: MyString
+  species: 

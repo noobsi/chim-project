@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  species_name: MyString
+  species_info: MyText
+  min_price: 1
+  max_price: 1
+
+two:
+  species_name: MyString
+  species_info: MyText
+  min_price: 1
+  max_price: 1

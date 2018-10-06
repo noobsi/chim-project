@@ -1,0 +1,216 @@
+﻿# A5:ER FORMAT:11
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=chim-project
+Author=BinhDV
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Relation]
+Entity1=BIRD
+Entity2=BIRD_IMAGE
+RelationType1=2
+RelationType2=3
+Fields1=ID
+Fields2=BIRD_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3500,6500,3797,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20181005030444
+LineMode=0
+Bar1=350
+Bar2=650
+Bar3=380
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=BIRD
+Entity2=REVIEW
+RelationType1=2
+RelationType2=3
+Fields1=ID
+Fields2=BIRD_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3388,6612,3021,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20181005030416
+LineMode=0
+Bar1=339
+Bar2=661
+Bar3=302
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=SPECIES
+Entity2=BIRD
+RelationType1=2
+RelationType2=3
+Fields1=ID
+Fields2=SPECIES_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3493,6507,3493,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=349
+Bar2=651
+Bar3=349
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=USER
+Entity2=REVIEW
+RelationType1=2
+RelationType2=3
+Fields1=ID
+Fields2=USER_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,1653,8347,1532,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20181005030406
+LineMode=0
+Bar1=165
+Bar2=835
+Bar3=153
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=SPECIES
+LName=種類
+Comment=
+TableOption=
+Page=Main
+Left=150
+Top=400
+Field="ID","ID","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="名前","SPECIES_NAME","VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="情報","SPECIES_INFO","VARCHAR",,,"","",$FFFFFFFF,""
+Field="最小値段","MIN_PRICE","INT",,,"","",$FFFFFFFF,""
+Field="最大値段","MAX_PRICE","INT",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20181005025022
+Position="Main",150,400,265,230
+
+[Entity]
+PName=BIRD_IMAGE
+LName=鳥の写真
+Comment=
+TableOption=
+Page=Main
+Left=900
+Top=400
+Field="ID","ID","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="鳥ID","BIRD_ID","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="写真","BIRD_IMAGE","VARCHAR",,,"NULL","URL to the image of bird",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20181005030018
+Position="Main",900,400,208,212
+
+[Entity]
+PName=REVIEW
+LName=レビュー
+Comment=
+TableOption=
+Page=Main
+Left=550
+Top=50
+Field="ID","ID","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="鳥ID","BIRD_ID","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="ユーザーID","USER_ID","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="口コミ","COMMENT","VARCHAR",,,"","",$FFFFFFFF,""
+Field="レビュー","RATING","INT","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20181005030101
+Position="Main",550,50,230,218
+
+[Entity]
+PName=BIRD
+LName=鳥
+Comment=
+TableOption=
+Page=Main
+Left=550
+Top=400
+Field="ID","ID","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="鳥名","BIRD_NAME","VARCHAR",,,"","",$FFFFFFFF,""
+Field="鳥の種類ID","SPECIES_ID","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="情報","BIRD_INFO","VARCHAR",,,"","",$FFFFFFFF,""
+Field="値段","BIRD_PRICE","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="鳥声","BIRD_VOICE","VARCHAR",,,"","URL to voice link",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20181005025958
+Position="Main",550,400,270,230
+
+[Entity]
+PName=USER
+LName=ユーザ
+Comment=
+TableOption=
+Page=Main
+Left=150
+Top=50
+Field="ID","ID","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ニックネーム","USER_NAME","VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","USER_PASSWORD","VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="メールアドレス","USER_MAIL","VARCHAR","NOT NULL",,"","",$FFFFFFFF,""
+Field="ロール","USER_ROLE","INT","NOT NULL",,"","(0: user, 1: Admin); INT in case of new role",$FFFFFFFF,""
+Field="写真","USER_AVATAR","VARCHAR",,,"NULL","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20181005024926
+Position="Main",150,50,261,202

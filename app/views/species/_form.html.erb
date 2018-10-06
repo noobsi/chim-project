@@ -1,0 +1,33 @@
+<%= form_for(@species) do |f| %>
+  <% if @species.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@species.errors.count, "error") %> prohibited this species from being saved:</h2>
+
+      <ul>
+      <% @species.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :species_name %><br>
+    <%= f.text_field :species_name %>
+  </div>
+  <div class="field">
+    <%= f.label :species_info %><br>
+    <%= f.text_area :species_info %>
+  </div>
+  <div class="field">
+    <%= f.label :min_price %><br>
+    <%= f.number_field :min_price %>
+  </div>
+  <div class="field">
+    <%= f.label :max_price %><br>
+    <%= f.number_field :max_price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

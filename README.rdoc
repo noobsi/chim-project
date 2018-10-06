@@ -1,28 +1,17 @@
-== README
+== IT日本語(3) ~ VNCS語 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.3
 
-Things you may want to cover:
+* Rail version: 4.2.3
 
-* Ruby version
+* Database: SQLite3
 
-* System dependencies
+Useful links:
 
-* Configuration
+* Trello: https://trello.com/b/Ovcwf02o/road-to-ge
 
-* Database creation
+* Git flow: https://trello.com/c/4Y1QdG1e/23-git-flow
 
-* Database initialization
+* Backlog: https://docs.google.com/spreadsheets/d/14D7YtNzw7K36aWOfPbgFLgEmt0FZpaPqbA6YxhH4JoI/edit#gid=1807579509
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Tool to design database: https://a5m2.mmatsubara.com/index.en.html

@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
   get     'login'    => 'session#new'
   post    'login'    => 'session#create'
   get  'logout'   => 'session#destroy'
 
-=======
   root 'static_pages#home'
   get  '/help',    to: 'static_pages#help'
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
->>>>>>> cb4d87da63f7eb7d8f0843252cdc3993d778f2dc
 
   resources :bird_images
   resources :reviews

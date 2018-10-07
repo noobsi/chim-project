@@ -6,6 +6,7 @@ gem 'rails', '4.2.3'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem "sprockets-rails", :require => "sprockets/railtie"
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass', '~> 4.4.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -27,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Time zone gem for window dependency
 gem 'tzinfo-data'
 
+gem "bcrypt"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

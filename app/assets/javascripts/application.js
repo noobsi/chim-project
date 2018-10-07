@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-//= require jquery 
-//= require bootstrap-sprockets
-=======
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -18,5 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 // require_tree .
-
->>>>>>> cb4d87da63f7eb7d8f0843252cdc3993d778f2dc
+//= require bootstrap-sprockets

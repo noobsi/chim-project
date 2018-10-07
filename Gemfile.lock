@@ -39,11 +39,8 @@ GEM
     arel (6.0.4)
     autoprefixer-rails (9.1.4)
       execjs
-<<<<<<< HEAD
     bcrypt (3.1.12)
     bcrypt (3.1.12-x86-mingw32)
-=======
->>>>>>> cb4d87da63f7eb7d8f0843252cdc3993d778f2dc
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.7)
@@ -172,13 +169,8 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-<<<<<<< HEAD
   bcrypt
-  bootstrap-sass (~> 3.3.6)
-=======
-
   bootstrap-sass (~> 3.3.5)
->>>>>>> cb4d87da63f7eb7d8f0843252cdc3993d778f2dc
   byebug
   coffee-rails (~> 4.1.0)
   font-awesome-sass (~> 4.4.0)

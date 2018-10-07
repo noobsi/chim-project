@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+
   get     'login'    => 'session#new'
   post    'login'    => 'session#create'
   get  'logout'   => 'session#destroy'

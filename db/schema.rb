@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20181007090558) do
+=======
+ActiveRecord::Schema.define(version: 20181006113455) do
+>>>>>>> cb4d87da63f7eb7d8f0843252cdc3993d778f2dc
 
   create_table "bird_images", force: :cascade do |t|
     t.string   "image"
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(version: 20181007090558) do
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
+<<<<<<< HEAD
     t.string   "user_mail"
     t.string   "user_role"
     t.string   "integer"
@@ -67,4 +72,14 @@ ActiveRecord::Schema.define(version: 20181007090558) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
+=======
+    t.string   "user_password"
+    t.string   "user_mail"
+    t.integer  "user_role"
+    t.string   "user_avatar"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+>>>>>>> cb4d87da63f7eb7d8f0843252cdc3993d778f2dc
 end

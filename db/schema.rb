@@ -52,8 +52,7 @@ ActiveRecord::Schema.define(version: 20181006113455) do
     t.string   "user_name"
     t.string   "user_password"
     t.string   "user_mail"
-    t.string   "user_role"
-    t.string   "integer"
+    t.integer  "user_role"
     t.string   "user_avatar"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

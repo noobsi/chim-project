@@ -1,10 +1,13 @@
 class CreateBirds < ActiveRecord::Migration
   def change
     create_table :birds do |t|
-      t.string :bird_name
+      #data
+      t.string :bird_name,                  default: ""
       t.text :bird_info
-      t.integer :bird_price
+      t.integer :bird_price,  null: false,  default: 0
       t.string :bird_voice
+
+      t.integer :species_id
       t.belongs_to :species
 
       t.timestamps null: false

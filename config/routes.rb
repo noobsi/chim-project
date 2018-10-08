@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   root to: 'page#index'
   get 'page/index'
 
+  get 'password_resets/new'
+
+  get  'login'    => 'session#new'
+  post 'login'    => 'session#create'
+  get  'logout'   => 'session#destroy'
+
   resources :bird_images
   resources :reviews
   resources :birds

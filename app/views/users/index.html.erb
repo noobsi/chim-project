@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>User name</th>
-      <th>User password</th>
       <th>User mail</th>
       <th>User role</th>
       <th>Integer</th>
@@ -19,7 +18,6 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.user_name %></td>
-        <td><%= user.user_password %></td>
         <td><%= user.user_mail %></td>
         <td><%= user.user_role %></td>
         <td><%= user.integer %></td>
@@ -33,5 +31,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New User', new_user_path %>

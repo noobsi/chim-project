@@ -43,9 +43,6 @@ GEM
     bcrypt (3.1.12-x86-mingw32)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (10.0.2)
     coffee-rails (4.1.1)
@@ -62,8 +59,6 @@ GEM
     execjs (2.7.0)
     ffi (1.9.25)
     ffi (1.9.25-x86-mingw32)
-    font-awesome-sass (4.4.0)
-      sass (>= 3.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
@@ -169,11 +164,11 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+<<<<<<< HEAD
   bcrypt
   bootstrap-sass (~> 3.3.5)
   byebug
   coffee-rails (~> 4.1.0)
-  font-awesome-sass (~> 4.4.0)
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.3)

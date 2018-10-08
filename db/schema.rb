@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181006113455) do
+ActiveRecord::Schema.define(version: 20181007150839) do
 
   create_table "bird_images", force: :cascade do |t|
     t.string   "image"
@@ -50,12 +50,15 @@ ActiveRecord::Schema.define(version: 20181006113455) do
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
-    t.string   "user_password"
     t.string   "user_mail"
     t.integer  "user_role"
     t.string   "user_avatar"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "password_digest"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end

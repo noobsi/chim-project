@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
-
-  get     'login'    => 'session#new'
-  post    'login'    => 'session#create'
-  get  'logout'   => 'session#destroy'
-
-  root 'static_pages#home'
-  get  '/help',    to: 'static_pages#help'
-  get  '/about',   to: 'static_pages#about'
-  get  '/contact', to: 'static_pages#contact'
   root to: 'page#index'
   get 'page/index'
+
+  get 'password_resets/new'
+
+  get  'login'    => 'session#new'
+  post 'login'    => 'session#create'
+  delete  'logout'   => 'session#destroy'
 
   resources :bird_images
   resources :reviews

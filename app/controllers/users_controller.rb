@@ -29,5 +29,4 @@ class UsersController < ApplicationController
     params.require(:user).permit :user_name, :password, :password_confirmation
   end
 
-  
 end

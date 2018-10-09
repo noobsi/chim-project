@@ -26,7 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Time zone gem for window dependency
 gem 'tzinfo-data'
 
-gem "bcrypt"
+# Devise to manage user
+gem 'devise', '~> 4.5'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

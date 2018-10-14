@@ -5,11 +5,10 @@ class SessionsController < Devise::SessionsController
       super
       flash.delete(:notice)
     end
-  
+
     # DELETE /resource/sign_out
     def destroy
       super
       flash.delete(:notice)
     end
-  
 end

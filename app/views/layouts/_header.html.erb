@@ -1,3 +1,14 @@
 <header>
-
+    <%= link_to new_user_session_path, :action => 'go' do %>
+        <div class="button-container-2" style="position: absolute; top: 0px; right: 0px;">
+            <span class="mas">LOGIN</span>
+            <button type="button" name="Hover">LOGIN</button>
+        </div>
+    <% end %>
+    <%= link_to new_user_registration_path, :action => 'go' do %>
+        <div class="button-container-1" style="position: absolute; top: 0px; right: 100px;">
+            <span class="mas">SIGN UP</span>
+            <button type="button" name="Hover">SIGN UP</button>
+        </div>
+    <% end %>
 </header>

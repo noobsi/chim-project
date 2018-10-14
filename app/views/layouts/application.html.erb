@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ChimProject</title>
+  <title>ChimReview</title>
+  <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type => "image/x-icon" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <section class="content" style="min-height: auto;">
-    <% flash.each do |key, value| %>
-      <div class="row">
-        <div class="alert alert-<%= key %>">
-          <%= value %>
-        </div>
-      </div>
-    <% end %>
-  </section>
+  <!--<section class="content" style="min-height: auto;">-->
+    <!--<% flash.each do |key, value| %>-->
+      <!--<div class="row">-->
+        <!--<div class="alert alert-<%= key %>">-->
+          <!--<%= value %>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--<% end %>-->
+  <!--</section>-->
   <%= yield %>
 
 </body>

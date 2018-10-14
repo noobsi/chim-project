@@ -1,12 +1,9 @@
 <!DOCTYPE HTML>
 <html>
-
-  <%= render partial: "layouts/header" %>
-
+  <%= render partial: "layouts/header", layout: "layouts/header" %>
+  <%= render partial: "layouts/side_nav", layout: "layouts/side_nav" %>
 	<body>
 	<div id="colorlib-page">
-		<%= render partial: "layouts/sidenav" %>
-
 		<div id="colorlib-main">
 			<aside id="colorlib-hero" class="js-fullheight">
 				<div class="flexslider js-fullheight">
@@ -27,7 +24,6 @@
 					   		</div>
 					   	</div>
 				   	</li>
-
 				   	<li style="background-image: url(<%= asset_path 'bird_bg_2.jpg' %>); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
 				   		<div class="overlay"></div>
 				   		<div class="container-fluid">
@@ -44,7 +40,6 @@
 					   		</div>
 				   		</div>
 				   	</li>
-
 				   	<li style="background-image: url(<%= asset_path 'bird_bg_3.jpg' %>); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
 				   		<div class="overlay"></div>
 				   		<div class="container-fluid">
@@ -60,9 +55,8 @@
 					   		</div>
 				   		</div>
 				   	</li>
-
-				  	</ul>
-			  	</div>
+          </ul>
+        </div>
 			</aside>
 
 			<div class="colorlib-about">

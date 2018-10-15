@@ -1,12 +1,11 @@
-<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 <aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-  <h1 id="colorlib-logo"><%= link_to "鳥好き", root_path %></h1>
+  <h1 id="colorlib-logo"><%= link_to "鳥好き", root_path , method: :get %></h1>
   <nav id="colorlib-main-menu" role="navigation">
     <ul>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Species", species_index_path %></li>
-      <li><%= link_to "Birds", birds_path %></li>
-      <li><%= link_to "Review", reviews_path %></li>
+      <li><%= link_to "Home", root_path , method: :get %></li>
+      <li><%= link_to "Species", species_index_path , method: :get %></li>
+      <li><%= link_to "Birds", birds_path , method: :get %></li>
+      <li><%= link_to "Review", reviews_path , method: :get %></li>
       <% if user_signed_in? %>
         <li>
         <%= link_to('Edit', edit_user_registration_path) %>

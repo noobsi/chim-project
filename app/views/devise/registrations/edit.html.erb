@@ -1,11 +1,9 @@
 <html>
-  <%= render partial: "layouts/header" %>
   <body class="bg-success">
     <div class="text-center">
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
     </div>
     <div id="colorlib-page">
-    	<%= render partial: "layouts/sidenav" %>
       <div class="col-md-6 col-md-offset-3">
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>

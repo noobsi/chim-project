@@ -1,71 +1,67 @@
 <!DOCTYPE HTML>
 <html>
-
-    <%= render partial: "layouts/header" %>
-
 	<body>
 	<div id="colorlib-page">
-		<%= render partial: "layouts/sidenav" %>
-
 		<div id="colorlib-main">
 			<aside id="colorlib-hero" class="js-fullheight">
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
-						<%= image_tag('bird_bg_1.jpg') %>
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1>Sibia (チメドリ)</h1>
-					   					<h2>旧大陸の中低緯度（主に熱帯）に生息する。なお、アメリカ西海岸にいるミソサザイモドキ Chamaea は、チメドリ科からダルマエナガ科に移された。</a></h2>
-										</div>
-				   				</div>
-				   			</div>
+						<li style="background-image: url(<%= asset_path 'bird_bg_1.jpg' %>); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
+							<div class="banner"></div>
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner">
+					   					<div class="desc">
+						   					<h1>Sibia (チメドリ)</h1>
+						   					<h2>旧大陸の中低緯度（主に熱帯）に生息する。なお、アメリカ西海岸にいるミソサザイモドキ Chamaea は、チメドリ科からダルマエナガ科に移された。</h2>
+											</div>
+					   				</div>
+					   			</div>
+					   		</div>
+					   	</div>
+				   	</li>
+				   	<li style="background-image: url(<%= asset_path 'bird_bg_2.jpg' %>); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner">
+					   					<div class="desc">
+						   					<h1>Blue Jay
+											   (アオカケス)</h1>
+												<h2>森林や農耕地・市街地などに生息する。ペアで縄張りを形成して生活する。英名jayは「ジェイ、ジェイ」と聞こえる鳴き声に由来するが、猛禽類の鳴き声を真似て威嚇などに用いることもある。</h2>
+											</div>
+					   				</div>
+					   			</div>
+					   		</div>
 				   		</div>
-			   		</div>
-
-				   	<%= image_tag('bird_bg_2.jpg') %>
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1>Blue Jay
-										   (アオカケス)</h1>
-											<h2>森林や農耕地・市街地などに生息する。ペアで縄張りを形成して生活する。英名jayは「ジェイ、ジェイ」と聞こえる鳴き声に由来するが、猛禽類の鳴き声を真似て威嚇などに用いることもある。</a></h2>
-										</div>
-				   				</div>
-				   			</div>
+				   	</li>
+				   	<li style="background-image: url(<%= asset_path 'bird_bg_3.jpg' %>); width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
+				   		<div class="overlay"></div>
+				   		<div class="container-fluid">
+				   			<div class="row">
+					   			<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+					   				<div class="slider-text-inner">
+					   					<div class="desc">
+						   					<h1>Lazuli bunting (スズメ目)</h1>
+												<h2>南北アメリカ（ガラパゴス諸島を含む）の熱帯に生息する。雄は色鮮やかな羽色が多いが、雌は地味である。</h2>
+											</div>
+					   				</div>
+					   			</div>
+					   		</div>
 				   		</div>
-			   		</div>
-
-				   	<%= image_tag('bird_bg_3.jpg') %>
-			   		<div class="overlay"></div>
-			   		<div class="container-fluid">
-			   			<div class="row">
-				   			<div class="col-md-6 col-md-offset-3 col-md-push-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-				   				<div class="slider-text-inner">
-				   					<div class="desc">
-					   					<h1>Lazuli bunting (スズメ目)</h1>
-											<h2>南北アメリカ（ガラパゴス諸島を含む）の熱帯に生息する。雄は色鮮やかな羽色が多いが、雌は地味である。</a></h2>
-										</div>
-				   				</div>
-				   			</div>
-				   		</div>
-			   		</div>
-
-				  	</ul>
-			  	</div>
+				   	</li>
+          </ul>
+        </div>
 			</aside>
 
 			<div class="colorlib-about">
 				<div class="colorlib-narrow-content">
 					<div class="row">
 						<div class="col-md-6">
-							<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url(images/birds-of-paradise.jpg);">
+							<div class="about-img animate-box" data-animate-effect="fadeInLeft" style="background-image: url(<%= asset_path 'birds-of-paradise.jpg' %>);">
 							</div>
 						</div>
 						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
@@ -102,27 +98,6 @@
 
 		</div>
 	</div>
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Sticky Kit -->
-	<script src="js/sticky-kit.min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-
-
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
 
 	</body>
 </html>

@@ -10,6 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require animate
+ *= require icomoon
+ *= require bootstrap
+ *= require flexslider
+ *= require flaticon
+ *= require owl.carousel.min
+ *= require owl.theme.default.min
+ *= require style
+ *= require header
+ *= require login_signup_btt
+ *= require search_bar
  */

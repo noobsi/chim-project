@@ -15,3 +15,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //
+//= require jquery.min
+//= require jquery.easing.1.3
+//= require jquery.waypoints.min
+//= require jquery.flexslider-min
+//= require sticky-kit.min
+//= require owl.carousel.min
+//= require jquery.countTo
+//= require main
+//= require bootstrap.min
+//= require google_map
+//= require modernizr-2.6.2.min
+//= require respond.min
+//= require auto_hide_header
+//= require search_bar
+//

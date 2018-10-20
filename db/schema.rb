@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181013135339) do
+ActiveRecord::Schema.define(version: 20181020015137) do
 
   create_table "bird_images", force: :cascade do |t|
     t.string   "image"
@@ -54,6 +54,9 @@ ActiveRecord::Schema.define(version: 20181013135339) do
     t.string   "encrypted_password",     default: "", null: false
     t.string   "user_avatar",            default: ""
     t.integer  "user_role",              default: 0,  null: false
+    t.datetime "birthdate"
+    t.string   "sex"
+    t.string   "phone"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -64,9 +67,6 @@ ActiveRecord::Schema.define(version: 20181013135339) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.datetime "birthdate"
-    t.string   "sex"
-    t.string   "phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

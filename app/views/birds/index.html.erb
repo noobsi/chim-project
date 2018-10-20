@@ -21,7 +21,7 @@
         <td><%= bird.bird_info %></td>
         <td><%= bird.bird_price %></td>
         <td><%= bird.bird_voice %></td>
-        <td><%= bird.species %></td>
+        <td><%= bird.species.species_name %></td>
         <td><%= link_to 'Show', bird %></td>
         <td><%= link_to 'Edit', edit_bird_path(bird) %></td>
         <td><%= link_to 'Destroy', bird, method: :delete, data: { confirm: 'Are you sure?' } %></td>

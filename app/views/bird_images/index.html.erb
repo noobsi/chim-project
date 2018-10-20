@@ -14,8 +14,8 @@
   <tbody>
     <% @bird_images.each do |bird_image| %>
       <tr>
-        <td><%= bird_image.image %></td>
-        <td><%= bird_image.bird %></td>
+        <td><%= image_tag "#{bird_image.image}" %></td>
+        <td><%= bird_image.bird.bird_name %></td>
         <td><%= link_to 'Show', bird_image %></td>
         <td><%= link_to 'Edit', edit_bird_image_path(bird_image) %></td>
         <td><%= link_to 'Destroy', bird_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>

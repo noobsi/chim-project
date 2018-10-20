@@ -2,12 +2,12 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @bird_image.image %>
+  <%= image_tag "#{@bird_image.image}" %>
 </p>
 
 <p>
   <strong>Bird:</strong>
-  <%= @bird_image.bird %>
+  <%= @bird_image.bird.bird_name %>
 </p>
 
 <%= link_to 'Edit', edit_bird_image_path(@bird_image) %> |

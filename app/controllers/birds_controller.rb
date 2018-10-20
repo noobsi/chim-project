@@ -5,6 +5,7 @@ class BirdsController < ApplicationController
   # GET /birds.json
   def index
     @birds = Bird.all
+    @bird_images = BirdImage.joins(:bird)
   end
 
   # GET /birds/1

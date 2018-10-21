@@ -1,29 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div id="colorlib-page-double-top-padding">
+  <div id="colorlib-main">
 
-<p>
-  <strong>Bird name:</strong>
-  <%= @bird.bird_name %>
-</p>
+    <p>
+      <strong>Bird name:</strong>
+      <%= @bird.bird_name%>
+    </p>
 
-<p>
-  <strong>Bird info:</strong>
-  <%= @bird.bird_info %>
-</p>
+    <p>
+      <strong>Bird info:</strong>
+      <%= @bird.bird_info%>
+    </p>
 
-<p>
-  <strong>Bird price:</strong>
-  <%= @bird.bird_price %>
-</p>
+    <p>
+      <strong>Bird price:</strong>
+      <%= @bird.bird_price %>
+    </p>
 
-<p>
-  <strong>Bird voice:</strong>
-  <%= @bird.bird_voice %>
-</p>
+    <p>
+      <strong>Bird voice:</strong>
+    </p>
 
-<p>
-  <strong>Species:</strong>
-  <%= @bird.species.species_name %>
-</p>
+    <audio controls>
+      <source src=<%= asset_path(@bird.bird_voice) %> type="audio/mpeg">
+      This bird has no voice data.
+    </audio>
 
-<%= link_to 'Edit', edit_bird_path(@bird) %> |
-<%= link_to 'Back', birds_path %>
+    <p>
+      <strong>Species:</strong>
+      <%= @bird.species.species_name %>
+    </p>
+
+    <% BirdImage.where(bird_id:@bird.id).each do |bird_image| %>
+      <%= image_tag(bird_image.image)  %>
+    <% end %>
+
+
+
+    <%= link_to 'Edit', edit_bird_path(@bird) %> |
+    <%= link_to 'Back', birds_path %>
+  </div>
+</div>

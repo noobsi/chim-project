@@ -11,6 +11,7 @@ class BirdsController < ApplicationController
   # GET /birds/1
   # GET /birds/1.json
   def show
+    @bird_images = BirdImage.joins(:bird)
   end
 
   # GET /birds/new

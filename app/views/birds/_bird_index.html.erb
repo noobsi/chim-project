@@ -19,7 +19,7 @@
                         <%= bird.reviews.count %>
                       </small>
                     </span>
-            <h3><%= link_to bird.bird_name, bird %></h3>
+            <h3><%= link_to bird.bird_name, bird, method: :get%></h3>
             <p><%=bird.bird_info%></p>
           </div>
         </div>

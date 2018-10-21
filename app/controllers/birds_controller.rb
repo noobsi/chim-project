@@ -4,12 +4,14 @@ class BirdsController < ApplicationController
   # GET /birds
   # GET /birds.json
   def index
-    @birds = Bird.all
+    @birds = Bird.all.order(:species_id).page(params[:page]).per(6)
+    @bird_images = BirdImage.joins(:bird)
   end
 
   # GET /birds/1
   # GET /birds/1.json
   def show
+    @bird_images = BirdImage.joins(:bird)
   end
 
   # GET /birds/new

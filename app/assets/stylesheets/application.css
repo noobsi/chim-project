@@ -21,4 +21,8 @@
  *= require header
  *= require login_signup_btt
  *= require search_bar
+ *= require side_nav
+ *= require bird_slide_show
+ *= require page_body
+ *= require login_signup
  */

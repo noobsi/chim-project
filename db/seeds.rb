@@ -155,3 +155,16 @@ sibia_image = [
 sibia_image.each do |i|
 	BirdImage.create(image: i, bird_id: 19)
 end
+
+
+sibia_reviews = [
+	["めっちゃ綺麗なとり~",40,1,19],
+	["この鳥の声はユニークですね",45,2,19],
+	["まだ、見てる人いまふか？？﻿",30,3,19],
+	["美味しそうな鳥。。。冗談です",35,4,19],
+	["この鳥、飼いたいものだ :))",50,5,19],
+	]
+
+sibia_reviews.each do |comment, rating, user_id, bird_id|
+	Review.create(comment: comment, rating: rating, user_id: user_id, bird_id: bird_id)
+end

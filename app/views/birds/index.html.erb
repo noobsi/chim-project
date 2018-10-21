@@ -40,15 +40,16 @@
           <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
             <span class="heading-meta">Birds</span>
             <h2 class="colorlib-heading">All birds</h2>
+            <%= paginate @birds %>
           </div>
         </div>
-        
+
         <% @birds.each_slice(3) do |bird_row| %>
           <div class="row">
             <% bird_row.each do |bird| %>
               <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
                 <div class="blog-entry">
-                 
+
                   <%= link_to bird do %>
                     <div class="blog-img">
                       <div class = "bird_cell" >
@@ -57,7 +58,13 @@
                     </div>
                   <% end %>
                   <div class="desc">
-                    <span><small><%= bird.created_at%></small> | <small> <%= bird.species.species_name %> </small> | <small> <i class="icon-bubble3"></i> 4</small></span>
+                    <span>
+                      <small><%= bird.species.species_name %></small> |
+                      <small>
+                        <i class="icon-bubble3"></i>
+                        <%= bird.reviews.count %>
+                      </small>
+                    </span>
                     <h3><%= link_to bird.bird_name, bird %></h3>
                     <p><%=bird.bird_info%></p>
                   </div>
@@ -67,10 +74,15 @@
           </div>
         <% end %>
 
-
-
         <div class="row">
+          <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+            <%= paginate @birds %>
+          </div>
+        </div>
+
+        <!-- <div class="row">
           <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+
             <ul class="pagination">
               <li class="disabled"><a href="#">&laquo;</a></li>
               <li class="active"><a href="#">1</a></li>
@@ -80,10 +92,10 @@
               <li><a href="#">&raquo;</a></li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
 
-    
+
     </div>
   </div>
 </div>

@@ -1,101 +1,18 @@
 
 <div id="colorlib-page" style="padding-top: 20px">
 	<div id="colorlib-main">
-<!--
-    <table>
-      <thead>
-        <tr>
-          <th>Bird name</th>
-          <th>Bird info</th>
-          <th>Bird price</th>
-          <th>Bird voice</th>
-          <th>Species</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @birds.each do |bird| %>
-          <tr>
-            <td><%= bird.bird_name %></td>
-            <td><%= bird.bird_info %></td>
-            <td><%= bird.bird_price %></td>
-            <td><%= bird.bird_voice %></td>
-            <td><%= bird.species.species_name %></td>
-            <td><%= link_to 'Show', bird %></td>
-            <td><%= link_to 'Edit', edit_bird_path(bird) %></td>
-            <td><%= link_to 'Destroy', bird, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-    <br>
-    <%= link_to 'New Bird', new_bird_path %>
--->
-
     <div class="colorlib-blog">
       <div class="colorlib-narrow-content">
+
         <div class="row">
           <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
             <span class="heading-meta">Birds</span>
             <h2 class="colorlib-heading">All birds</h2>
-            <%= paginate @birds %>
+
           </div>
         </div>
-
-        <% @birds.each_slice(3) do |bird_row| %>
-          <div class="row">
-            <% bird_row.each do |bird| %>
-              <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                <div class="blog-entry">
-
-                  <%= link_to bird do %>
-                    <div class="blog-img">
-                      <div class = "bird_cell" >
-                        <%= image_tag(@bird_images.where(bird_id:bird.id).first.image,   :width => "100%") %>
-                      </div>
-                    </div>
-                  <% end %>
-                  <div class="desc">
-                    <span>
-                      <small><%= bird.species.species_name %></small> |
-                      <small>
-                        <i class="icon-bubble3"></i>
-                        <%= bird.reviews.count %>
-                      </small>
-                    </span>
-                    <h3><%= link_to bird.bird_name, bird %></h3>
-                    <p><%=bird.bird_info%></p>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-            <%= paginate @birds %>
-          </div>
-        </div>
-
-        <!-- <div class="row">
-          <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-
-            <ul class="pagination">
-              <li class="disabled"><a href="#">&laquo;</a></li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">&raquo;</a></li>
-            </ul>
-          </div>
-        </div> -->
+        <%= render partial: "birds/bird_index", layout: "birds/bird_index" %>
       </div>
-
-
     </div>
   </div>
 </div>

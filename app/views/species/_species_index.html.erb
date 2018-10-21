@@ -1,0 +1,27 @@
+<% @species.each_slice(3) do |specie_row| %>
+  <div class="row">
+    <% specie_row.each do |specie| %>
+      <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
+        <div class="blog-entry">
+
+          <%= link_to specie do %>
+            <div class="blog-img">
+              <div class = "bird_cell" >
+                <%=
+                Bird.where(species_id:specie.id).count > 0 ?
+                  image_tag(@bird_images.where(bird_id:(Bird.where(species_id:specie.id).first).id).first.image,   :width => "100%")
+                    : image_tag("no_image.png", :width => "100%")
+                %>
+              </div>
+            </div>
+          <% end %>
+          <div class="desc">
+            <h3><%= link_to specie.species_name, specie %></h3>
+            <p><%=specie.species_info%></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<%= paginate @species %>

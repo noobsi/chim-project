@@ -8,8 +8,8 @@
 
 user = User.new(
     user_name: 'admin',
-    email: 'admin@123.com', 
-    password: '123456', 
+    email: 'admin@123.com',
+    password: '123456',
     password_confirmation: '123456',
     user_role: 1
   )
@@ -38,7 +38,7 @@ species_list = [
 		0,0]
 	]
 species_list.each do |species_name,species_info,min_price,max_price|
-	Species.create( species_name: species_name, species_info: species_info, 
+	Species.create( species_name: species_name, species_info: species_info,
 		min_price: min_price, max_price: max_price)
 end
 
@@ -133,7 +133,7 @@ birds_list = [
 	 3],
 	]
 birds_list.each do |bird_name, bird_info, bird_price, species_id|
-	Bird.create( bird_name: bird_name, bird_info: bird_info, 
+	Bird.create( bird_name: bird_name, bird_info: bird_info,
 		bird_price: bird_price, species_id: species_id)
 end
 

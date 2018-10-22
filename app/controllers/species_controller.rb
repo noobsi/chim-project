@@ -4,7 +4,8 @@ class SpeciesController < ApplicationController
   # GET /species
   # GET /species.json
   def index
-    @species = Species.all
+    @species = Species.all.order(:species_name).page(params[:page]).per(6)
+    @bird_images = BirdImage.joins(bird: :species)
   end
 
   # GET /species/1

@@ -1,0 +1,29 @@
+$brown: #D5A677;
+
+$textarea-color: $brown;
+$submit-color: $brown;
+
+.review-form {
+  // display: flex;
+  // overflow: hidden;
+}
+
+.review-form-text {
+  overflow: hidden;
+  padding: 12px 0px 10px 0px;
+  width: 85%;
+}
+
+.review-form-text textarea {
+  background-color: $textarea-color;
+}
+
+.review-form-submit {
+  float: right;
+  padding: 20px 20px 20px 0px;
+}
+
+.review-form-submit .btn-primary {
+  background-color: $submit-color;
+  border-color: $submit-color;
+}

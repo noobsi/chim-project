@@ -1,10 +1,11 @@
 class ReviewsController < ApplicationController
+  before_action :find_bird, only: [:index, :create, :show, :edit, :update, :destroy]
   before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.all
+    @reviews = @bird.reviews
   end
 
   # GET /reviews/1
@@ -25,6 +26,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = current_user.reviews.build(review_params)
+    @review.bird_id = @bird.id
 
     respond_to do |format|
       if @review.save
@@ -69,6 +71,13 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:comment, :rating, :user, :bird)
+      params.require(:review).permit(:comment, :rating)
+      # params.require(:review).permit(:comment)
+    end
+
+    def find_bird
+      @bird = Bird.find_by id: params[:bird_id]
+      return if @bird
+      redirect_back fallback_location: root_path
     end
 end

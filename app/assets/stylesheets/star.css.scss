@@ -1,5 +1,5 @@
-$ratingControl-star-size: 35px;
-$ratingControl-star-margin: 10px;
+$ratingControl-star-size: 40px;
+$ratingControl-star-margin: 20px;
 
 $ratingControl-star-width: $ratingControl-star-size + $ratingControl-star-margin; // width takes into account the size and the margin, as this makes the label wider based on these two values
 $ratingControl-star-count : 5;

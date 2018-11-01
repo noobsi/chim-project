@@ -42,5 +42,12 @@
     <% if user_signed_in? %>
       <%= render partial: "reviews/form" %>
     <% end %>
+    Average rating
+    <%= @bird.rating %>/5
+    <div class="container">
+      <ul class="review-list">
+        <%= render @bird.reviews %>
+      </ul>
+    </div>
   </div>
 </div>

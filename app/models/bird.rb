@@ -7,7 +7,7 @@ class Bird < ActiveRecord::Base
       if reviews.empty?
         0
       else
-        reviews.average(:rating)/10
+        (reviews.average(:rating)/10).round(1)
       end
     end
 end

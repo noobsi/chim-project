@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = @bird.reviews
+    @reviews = @bird.reviews.page(params[:page]).per(6)
   end
 
   # GET /reviews/1

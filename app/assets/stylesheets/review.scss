@@ -27,3 +27,18 @@ $submit-color: $brown;
   background-color: $submit-color;
   border-color: $submit-color;
 }
+
+.review-list {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+  }
+}
+
+.record img {
+  float: left;
+  margin-right: 10px;
+  width: 8%;
+}

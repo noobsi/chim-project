@@ -1,0 +1,9 @@
+<div class="record" id="record-#{review.id}">
+  <li>
+    <%= gravatar_for review.user %>
+    <strong><%= review.user.user_name %></strong>
+    <span><%= review.comment %></span><p></p>
+    <strong>Rating</strong>
+    <span><%= review.rating_float %></span>
+  </li>
+</div>

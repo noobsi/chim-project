@@ -12,6 +12,7 @@ class BirdsController < ApplicationController
   # GET /birds/1.json
   def show
     @bird_images = BirdImage.joins(:bird)
+    @reviews = @bird.reviews.all_comments.page(params[:page]).per(6)
   end
 
   # GET /birds/new

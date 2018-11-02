@@ -44,9 +44,10 @@
     <% end %>
     Average rating
     <%= @bird.rating %>/5
+    <%= paginate @reviews %>
     <div class="container">
       <ul class="review-list">
-        <%= render @bird.reviews %>
+        <%= render @reviews %>
       </ul>
     </div>
   </div>

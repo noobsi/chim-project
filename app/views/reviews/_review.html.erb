@@ -2,8 +2,10 @@
   <li>
     <%= gravatar_for review.user %>
     <strong><%= review.user.user_name %></strong>
-    <span><%= review.comment %></span><p></p>
+    <span><%= review.comment %></span><p>
     <strong>Rating</strong>
-    <span><%= review.rating_float %></span>
+    <span><%= review.rating_float %></span><p>
+    <strong>Commented </strong>
+    <span><%= time_ago_in_words(review.created_at) %></span> ago
   </li>
 </div>

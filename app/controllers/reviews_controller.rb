@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = @bird.reviews.page(params[:page]).per(6)
+    @reviews = @bird.reviews.all_comments.page(params[:page]).per(6)
   end
 
   # GET /reviews/1
@@ -30,8 +30,8 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
+        format.html
+        format.js
       else
         format.html { render :new }
         format.json { render json: @review.errors, status: :unprocessable_entity }

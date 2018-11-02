@@ -42,10 +42,8 @@
     <% if user_signed_in? %>
       <%= render partial: "reviews/form" %>
     <% end %>
-    Average rating
-    <%= @bird.rating %>/5
-    <%= paginate @reviews %>
     <div class="container">
+      <%= paginate @reviews %>
       <ul class="review-list">
         <%= render @reviews %>
       </ul>

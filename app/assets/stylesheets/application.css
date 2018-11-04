@@ -27,4 +27,5 @@
  *= require login_signup
  *= require star
  *= require review
+ *= require toastr.min
  */

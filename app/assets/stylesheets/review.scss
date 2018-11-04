@@ -9,18 +9,19 @@ $submit-color: $brown;
 }
 
 .review-form-text {
+  border-radius: 10px;
+  border: 1px solid green;
   overflow: hidden;
-  padding: 12px 0px 10px 0px;
-  width: 85%;
+  width: 100%;
 }
 
 .review-form-text textarea {
-  background-color: $textarea-color;
+  // empty
 }
 
 .review-form-submit {
-  float: right;
-  padding: 20px 20px 20px 0px;
+  text-align: center;
+  padding: 10px 10px 10px 10px;
 }
 
 .review-form-submit .btn-primary {
@@ -41,4 +42,12 @@ $submit-color: $brown;
   float: left;
   margin-right: 10px;
   width: 8%;
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+.update-rating {
+  text-align: left;
 }

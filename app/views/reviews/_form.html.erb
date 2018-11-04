@@ -3,13 +3,9 @@
     <h4>
       <%= Review %>
     </h4>
-    <div class="review-form-submit">
-      <%= f.submit "Review", class: "btn btn-primary" %>
-    </div>
     <div class="review-form-text">
       <%= f.text_area :comment, class: "form-control" %>
     </div>
-
     <div class="demo">
       <div class="ratingControl">
         <input type="radio" id="rating-5" name="review[rating]" value="50">
@@ -34,6 +30,8 @@
         <label class="ratingControl-stars ratingControl-stars--05 ratingControl-stars--half" for="rating-05">05</label>
       </div>
     </div>
-    <div class="update-rating"><strong>Average rating: <%= @bird.rating %>/5</strong></div>
+    <div class="review-form-submit">
+      <%= f.submit "Review", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>

@@ -68,6 +68,7 @@
     <div class="container">
       <strong><%= @bird.review_count %> users has reviewed <%= @bird.bird_name %></strong>
       <div class="update-rating"><strong>Average rating: <%= @bird.rating %>/5</strong></div>
+      <%= render partial: "reviews/rating", locals: {rating: @bird.rating} %>
       <%= paginate @reviews %>
       <ul class="review-list">
         <%= render @reviews %>

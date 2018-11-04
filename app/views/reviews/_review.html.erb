@@ -4,12 +4,9 @@
     <strong><%= review.user.user_name %></strong>
     <span><%= review.comment %></span><br>
     <strong>Rating</strong>
-    <span><%= review.rating_float %></span><br>
-    <strong>Reviewed </strong>
-    <span><%= time_ago_in_words(review.created_at) %></span> ago
-    <% if review.created_at != review.updated_at %>
-      <br><strong>Edited </strong>
-      <span><%= time_ago_in_words(review.updated_at) %></span> ago
-    <% end %>
+    <span><%= review.rating_float %></span>
+    <%= render partial: "reviews/rating", locals: {rating: review.rating_float} %>
+    <strong>Reviewed at </strong>
+    <span><%= review.updated_at.strftime("%Y-%m-%d, %H:%M") %></span>
   </li>
 </div>

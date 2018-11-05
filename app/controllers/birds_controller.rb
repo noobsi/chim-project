@@ -3,17 +3,8 @@ class BirdsController < ApplicationController
 
   def index
     @bird_images = BirdImage.joins(:bird)
-    # if params[:q]
-      # @q = Bird.search(params[:q])
-    # @birds = Bird.all.order(:species_id).page(params[:page]).per(6)
     @q = Bird.search(params[:q])
-    @birds = @q.result.page(params[:page]).per(6)
-    # if params[:search]
-      # @birds = Bird.by_name(params[:search]).page(params[:page]).per(6)
-    # elsif params[:q]
-    # elsif
-
-    # end
+    @birds = @q.result.includes(:species, :reviews).page(params[:page]).per(6)
   end
 
   def show

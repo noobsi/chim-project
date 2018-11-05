@@ -3,6 +3,8 @@ class Bird < ActiveRecord::Base
   has_many    :bird_images,   dependent: :destroy
   has_many    :reviews,       dependent: :destroy
 
+  scope :by_name, ->(search){where("bird_name LIKE ?", "%#{search}%")}
+
   def rating
     if reviews.empty?
       0

@@ -1,30 +1,23 @@
 class BirdsController < ApplicationController
   before_action :set_bird, only: [:show, :edit, :update, :destroy]
 
-  # GET /birds
-  # GET /birds.json
   def index
-    @birds = Bird.all.order(:species_id).page(params[:page]).per(6)
     @bird_images = BirdImage.joins(:bird)
+    @q = Bird.search(params[:q])
+    @birds = @q.result.includes(:species, :reviews).page(params[:page]).per(6)
   end
 
-  # GET /birds/1
-  # GET /birds/1.json
   def show
     @bird_images = BirdImage.joins(:bird)
+    @reviews = @bird.reviews.all_comments.page(params[:page]).per(6)
   end
 
-  # GET /birds/new
   def new
     @bird = Bird.new
   end
 
-  # GET /birds/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /birds
-  # POST /birds.json
   def create
     @bird = Bird.new(bird_params)
 
@@ -39,8 +32,6 @@ class BirdsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /birds/1
-  # PATCH/PUT /birds/1.json
   def update
     respond_to do |format|
       if @bird.update(bird_params)
@@ -53,8 +44,6 @@ class BirdsController < ApplicationController
     end
   end
 
-  # DELETE /birds/1
-  # DELETE /birds/1.json
   def destroy
     @bird.destroy
     respond_to do |format|
@@ -64,13 +53,12 @@ class BirdsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_bird
-      @bird = Bird.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def bird_params
-      params.require(:bird).permit(:bird_name, :bird_info, :bird_price, :bird_voice, :species)
-    end
+  def set_bird
+    @bird = Bird.find(params[:id])
+  end
+
+  def bird_params
+    params.require(:bird).permit(:bird_name, :bird_info, :bird_price, :bird_voice, :species)
+  end
 end

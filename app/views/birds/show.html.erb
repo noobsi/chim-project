@@ -3,10 +3,8 @@
     <div class="colorlib-about">
       <div class="colorlib-narrow-content">
         <div class="col-md-6">
-          <div class="about-img animate-box" data-animate-effect="fadeInLeft">
-
+          <div class="about-img">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
               <!-- Indicators -->
               <ol class="carousel-indicators">
                 <% BirdImage.where(bird_id: @bird.id).each_with_index do |bird_image, index| %>
@@ -26,7 +24,6 @@
                 <% end %>
               </div>
 
-
               <!-- Left and right controls -->
               <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -39,7 +36,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+        <div class="col-md-6">
           <div class="about-desc">
             <span class="heading-meta"><%= @bird.species.species_name %></span>
             <h2 class="colorlib-heading"><%= @bird.bird_name %></h2>
@@ -58,8 +55,6 @@
               This bird has no voice data.
             </audio>
           </div>
-
-
         </div>
         <div class="colorlib-about", style =  "padding-top: 0px">
           <div id="review-area">

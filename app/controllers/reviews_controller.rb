@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
       else
         flash[:warning] = "Some errors occured"
       end
-      redirect_to :back
+      redirect_to @bird
     end
 
   end

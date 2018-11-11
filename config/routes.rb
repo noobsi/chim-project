@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {sessions: "sessions", registrations: "registrations"}
   resources :users, only: [:show, :edit, :update]
+  get '/admin', to: 'admin#index'
   resources :bird_images
   resources :species
   resources :birds do

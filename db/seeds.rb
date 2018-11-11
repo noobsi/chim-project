@@ -6,19 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user = User.new(
-    user_name: 'admin',
-    email: 'admin@123.com',
-    password: '123456',
-    password_confirmation: '123456',
-    user_role: 1
-  )
+
 user_list = [
-	["Hung","hung@gmail.com","123456","123456",1,"1996-1-1","male","01234568"],
-	["Dat","dat@gmail.com","123456","123456",1,"1996-1-1","male","01234568"],
-	["TAnh","TAnh@gmail.com","123456","123456",1,"1996-1-1","male","01234568"],
-	["Binh","Binh@gmail.com","123456","123456",1,"1996-1-1","male","01234568"],
-	["Quoc","Quoc@gmail.com","123456","123456",1,"1996-1-1","male","01234568"]
+	["Hung","hung@gmail.com","123456","123456",0,"1996-1-1","male","01234568"],
+	["Dat","dat@gmail.com","123456","123456",0,"1996-1-1","male","01234568"],
+	["TAnh","TAnh@gmail.com","123456","123456",0,"1996-1-1","male","01234568"],
+	["Binh","Binh@gmail.com","123456","123456",0,"1996-1-1","male","01234568"],
+	["Quoc","Quoc@gmail.com","123456","123456",0,"1996-1-1","male","01234568"],
+	["Admin","admin@gmail.com","123456","123456",1,"1996-1-1","male","01234568"]
 ]
 user_list.each do |name, mail, password, password_confirmation, role, birthday, sex, phone|
 	User.create( user_name: name, email: mail, password: password, password_confirmation: password_confirmation,

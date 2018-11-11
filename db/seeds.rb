@@ -138,6 +138,7 @@ birds_list.each do |bird_name, bird_info, bird_price, species_id|
 end
 
 Bird.where(id:19).update_all(bird_voice:"19.mp3")
+Bird.where(id:19).update_all(bird_price:30000)
 
 (1..21).each do |n|
   image = "bird_images/#{n}.jpg"
@@ -161,7 +162,6 @@ sibia_reviews = [
 	["めっちゃ綺麗なとり~",40,1,19],
 	["この鳥の声はユニークですね",45,2,19],
 	["まだ、見てる人いまふか？？﻿",30,3,19],
-	["美味しそうな鳥。。。冗談です",35,4,19],
 	["この鳥、飼いたいものだ :))",50,5,19],
 	]
 

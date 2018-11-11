@@ -10,6 +10,7 @@ class BirdsController < ApplicationController
   def show
     @bird_images = BirdImage.joins(:bird)
     @reviews = @bird.reviews.all_comments.page(params[:page]).per(6)
+    @slideshow_selected_image_index = 1
   end
 
   def new

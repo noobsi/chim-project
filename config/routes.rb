@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   devise_for :users, controllers: {sessions: "sessions", registrations: "registrations"}
+  get '/admin', to: 'admin#index'
   resources :bird_images
   resources :species
   resources :birds do

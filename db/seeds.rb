@@ -163,3 +163,18 @@ sibia_reviews = [
 sibia_reviews.each do |comment, rating, user_id, bird_id|
 	Review.create(comment: comment, rating: rating, user_id: user_id, bird_id: bird_id)
 end
+
+random_reviews = [
+		["めっちゃ綺麗なとり~",40,4,18],
+		["この鳥の声はユニークですね",45,4,18],
+		["まだ、見てる人いまふか？？﻿",30,4,18],
+		["この鳥、飼いたいものだ :))",50,4,18],
+		["めっちゃ綺麗なとり~",40,4,17],
+		["この鳥の声はユニークですね",45,4,17],
+		["まだ、見てる人いまふか？？﻿",30,4,17],
+		["この鳥、飼いたいものだ :))",50,4,17],
+]
+
+random_reviews.each do |comment, rating, user_id, bird_id|
+	Review.create(comment: comment, rating: rating, user_id: user_id, bird_id: bird_id)
+end

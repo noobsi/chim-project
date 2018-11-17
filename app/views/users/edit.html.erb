@@ -13,9 +13,11 @@
                   <!-- left column -->
                   <div class="col-md-6">
                     <div class="text-center">
-                      <%= image_tag(current_user.avatar, class: 'avatar_image') %>
-                      <%= f.file_field :avatar ,class:'upload-btn'%>
-                      <%= f.hidden_field :avatar_cache %>
+                      <%=image_tag(@user.avatar, size:'480x480')%><br/><br/>
+                      <div style = "padding-left: 60px">
+                        <%= f.file_field :avatar ,class:'upload-btn'%>
+                        <%= f.hidden_field :avatar_cache %>
+                      </div>
                     </div>
                   </div>
 
@@ -24,9 +26,6 @@
                     <h3>Personal info</h3>
                     <%= f.label :user_name %>
                     <%= f.text_field :user_name, class: 'form-control' %>
-
-                    <%= f.label :description %>
-                    <%= f.text_field :description, class: 'form-control' %>
 
                     <%= f.label :email %>
                     <%= f.email_field :email, class: 'form-control' %>

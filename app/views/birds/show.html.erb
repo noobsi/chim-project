@@ -62,9 +62,11 @@
             </audio>
           </div>
         </div>
+        <% if user_signed_in? %>
         <% if current_user.user_role==1 %>
           <%= link_to "Edit Bird", edit_bird_path(@bird), method: :get, class: "btn btn-primary" %>
           <%= link_to "Delete Bird", @bird, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-primary" %>
+        <% end %>
         <% end %>
 
         <div class="colorlib-about", style =  "padding-top: 0px">

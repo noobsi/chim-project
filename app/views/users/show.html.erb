@@ -74,7 +74,7 @@
           <row>
             <% if user_signed_in? %>
               <% if current_user.id == @user.id %>
-                <%= link_to "Edit Profile", edit_user_registration_path, method: :get, class: "btn btn-primary" %>
+                <%= link_to "Edit Profile", edit_user_path, method: :get, class: "btn btn-primary" %>
               <% end %>
             <% end %>
           </row>

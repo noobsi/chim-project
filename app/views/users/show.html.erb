@@ -19,7 +19,11 @@
               <h2 class="colorlib-heading">名前</h2>
             </div>
             <div class="col-md-9">
+              <% if @user.user_name.blank?%>
+                <h2 class="colorlib-heading-profile">Not Specified</h2>
+              <% else %>
                 <h2 class="colorlib-heading-profile"><%= @user.user_name %></h2>
+              <% end %>
             </div>
           </row>
 
@@ -37,7 +41,7 @@
               <h2 class="colorlib-heading">電話番後</h2>
             </div>
             <div class="col-md-9">
-              <% if @user.phone.present? or @user.phone.nil? %>
+              <% if @user.phone.blank?%>
                 <h2 class="colorlib-heading-profile">Not Specified</h2>
               <% else %>
                 <h2 class="colorlib-heading-profile"><%= @user.phone %></h2>
@@ -50,7 +54,7 @@
               <h2 class="colorlib-heading">性別</h2>
             </div>
             <div class="col-md-9">
-              <% if @user.sex.present? or @user.sex.nil? %>
+              <% if @user.sex.blank?%>
                 <h2 class="colorlib-heading-profile">Not Specified</h2>
               <% else %>
                 <h2 class="colorlib-heading-profile"><%= @user.sex %></h2>
@@ -63,7 +67,7 @@
               <h2 class="colorlib-heading">誕生日</h2>
             </div>
             <div class="col-md-9">
-              <% if @user.birthdate.present? or @user.birthdate.nil? %>
+              <% if @user.birthdate.blank?%>
                 <h2 class="colorlib-heading-profile">Not Specified</h2>
               <% else %>
                 <h2 class="colorlib-heading-profile"><%= @user.birthdate.strftime('%F') %></h2>

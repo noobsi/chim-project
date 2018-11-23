@@ -10,9 +10,10 @@ class RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:user_name])
+    super
+  end
 
   # GET /resource/edit
   # def edit
@@ -63,7 +64,13 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def update_resource(resource, params)
-    resource.update_without_password(params)
+    @user = User.find(params[:id])
+    if resource.update_without_password(params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      redirect_to edit_user_registration_path, :flash => { :error => "Update failed! Something went wrong!" }
+    end
   end
 
   private

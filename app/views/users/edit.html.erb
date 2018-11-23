@@ -27,8 +27,6 @@
                     <%= f.label :user_name %>
                     <%= f.text_field :user_name, class: 'form-control' %>
 
-                    <%= f.label :email %>
-                    <%= f.email_field :email, class: 'form-control' %>
 
                     <%= f.label :phone %><i>(please fill in new phone number)</i><br/>
                     <%= f.text_field :phone, autocomplete: "phone number", class: 'form-control' %><br/>
@@ -48,7 +46,6 @@
             <% else %>
               <h1>You don't have permission to edit this profile</h1>
             <% end %>
-
 
             <hr>
           </div>

@@ -77,22 +77,6 @@
               <% else %>
                 <%= render partial: "reviews/form" %>
               <% end %>
-
-              <!-- Fixing -->
-              <!-- <div id="user-review">
-        <div class="container">
-          <strong>Your review</strong><br>
-          <% if @bird.review_user_present?(current_user.id) %>
-            <textarea style="resize:none; display: block; margin-left: auto; margin-right: auto;" cols="100" rows="3" disabled><%= @bird.review_user(current_user.id).comment %>
-            </textarea>
-            <br>
-            <%= @bird.review_user(current_user.id).rating_float %>
-          <% end %>
-        </div>
-      </div> -->
-              <!-- https://stackoverflow.com/questions/32709328/how-to-display-ajax-error-message-in-rails -->
-              <!-- https://stackoverflow.com/questions/7008781/resizing-a-f-text-area-in-rails -->
-              <!-- https://stackoverflow.com/questions/4223931/rails-text-area-size -->
             <% end %>
           </div>
 

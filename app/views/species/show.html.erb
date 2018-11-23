@@ -15,12 +15,12 @@
 
             <p>
               <strong>Min price:</strong>
-              <%= @species.min_price %>
+              <%= @birds.minimum("bird_price") %>
             </p>
 
             <p>
               <strong>Max price:</strong>
-              <%= @species.max_price %>
+              <%= @birds.maximum("bird_price") %>
             </p>
 
             <p>

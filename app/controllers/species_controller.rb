@@ -73,6 +73,6 @@ class SpeciesController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def species_params
-      params.require(:species).permit(:species_name, :species_info, :min_price, :max_price)
+      params.require(:species).permit(:species_name, :species_info)
     end
 end

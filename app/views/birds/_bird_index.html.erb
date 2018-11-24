@@ -1,4 +1,3 @@
-<%= paginate @birds %>
 <% @birds.each_slice(3) do |bird_row| %>
   <div class="row">
     <% bird_row.each do |bird| %>
@@ -7,7 +6,11 @@
           <%= link_to bird do %>
             <div class="blog-img">
               <div class = "bird_cell" >
-                <%= image_tag(@bird_images.where(bird_id:bird.id).first.image,   :width => "100%") %>
+                <%=
+                  @bird_images.where(bird_id:bird.id).exists? ?
+                    image_tag(@bird_images.where(bird_id:bird.id).first.image,   :width => "100%")
+                      : image_tag("no_image.png", :width => "100%")
+                %>
               </div>
             </div>
           <% end %>

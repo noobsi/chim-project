@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
       else
         flash[:warning] = "Some errors occured"
       end
-      redirect_to :back
+      redirect_to @bird
     end
 
   end
@@ -69,5 +69,9 @@ class ReviewsController < ApplicationController
     @bird = Bird.find_by id: params[:bird_id]
     return if @bird
     redirect_to :back
+  end
+
+  def show_user_reviews
+    @user_reviews = Review.where(user_id: current_user.id)
   end
 end

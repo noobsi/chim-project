@@ -1,40 +1,72 @@
-<div id="colorlib-page-top-padding">
-	<div id="colorlib-main">
-    <div class="colorlib-blog">
+<div id="colorlib-page-double-top-padding">
+  <div id="colorlib-main">
+    <div class="colorlib-about">
       <div class="colorlib-narrow-content">
+        <div class="col-md-6">
+          <div class="about-img">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <% BirdImage.where(bird_id: @birds.ids).each_with_index do |bird_image, index| %>
+                  <li data-target="#myCarousel" data-slide-to="<%= index %>" class="<%= index == 0 ? 'active' : '' %>"></li>
+                <% end %>
+              </ol>
 
-        <div class="row">
-          <div class="col-md-12 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-            <h2 class="colorlib-heading">
-              <%= @species.species_name %>
-            </h2>
+              <!-- Wrapper for slides -->
 
-            <p>
-              <%= @species.species_info %>
-            </p>
+              <div class="carousel-inner" role="listbox">
+                <% BirdImage.where(bird_id: @birds.ids).each_with_index do |bird_image, index| %>
+                  <div class="item <%= index == 0 ? 'active' : '' %>">
+                    <div class="bird_cell">
+                      <%= image_tag(bird_image.image, :width => "100%", :height => "510px") %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
 
-            <p>
-              <strong>Min price:</strong>
-              <%= @birds.minimum("bird_price") %>
-            </p>
-
-            <p>
-              <strong>Max price:</strong>
-              <%= @birds.maximum("bird_price") %>
-            </p>
-
-            <p>
-              <strong><%= @species.review_count %> users has reviewed <%= @species.species_name %></strong>
-              <div class="update-rating"><strong>Average rating: <%= @species.rating %>/5</strong></div>
-            </p>
-
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
           </div>
         </div>
-        <%= render partial: "species/species_show", layout: "species/species_show" %>
+        <div class="col-md-6">
+          <div class="about-desc">
+            <h2 class="colorlib-heading"><%= @species.species_name %></h2>
+            <div class = "review-rating-big">
+               <strong><%= @species.review_count %> users has reviewed <%= @species.species_name %></strong>
+            </div>
+            <div class = "review-rating-big">
+              <div class="update-rating"><strong>Average rating: <%= @species.rating %>/5</strong></div>
+              <%= render partial: "reviews/rating", locals: {rating: @species.rating} %>
+            </div>
+            <p><%= @species.species_info %></p>
+          </div>
+          <div class="about-desc">
+            <span class="heading-meta-kanji">最小値段:</span>
+            <h2>¥ <%= @birds.minimum("bird_price") %>‎</h2>
+          </div>
+          <div class="about-desc">
+            <span class="heading-meta-kanji">最大値段:</span>
+            <h2>¥ <%= @birds.maximum("bird_price") %>‎</h2>
+          </div>
+          <% if user_signed_in? %>
+          <% if current_user.user_role==1 %>
+            <%= link_to "Edit Specie", edit_species_path(@species), method: :get, class: "btn btn-primary" %>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="colorlib-about", style =  "padding-top: 0px">
+          <p></p>
+          <%= render partial: "species/species_show", layout: "species/species_show" %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<%= link_to 'Edit', edit_species_path(@species) %> |
-<%= link_to 'Back', species_index_path %>

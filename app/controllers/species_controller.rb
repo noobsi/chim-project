@@ -20,6 +20,7 @@ class SpeciesController < ApplicationController
 
   # GET /species/1/edit
   def edit
+      @birds = Bird.where(species_id:@species.id)
   end
 
   # POST /species
@@ -43,9 +44,11 @@ class SpeciesController < ApplicationController
   def update
     respond_to do |format|
       if @species.update(species_params)
+        flash[:success] = "Specie profile updated"
         format.html { redirect_to @species, notice: 'Species was successfully updated.' }
         format.json { render :show, status: :ok, location: @species }
       else
+        flash[:error] = "Update failed! Something went wrong!"
         format.html { render :edit }
         format.json { render json: @species.errors, status: :unprocessable_entity }
       end

@@ -8,5 +8,18 @@
     <%= render partial: "reviews/rating", locals: {rating: review.rating_float} %>
     <strong>Reviewed at </strong>
     <span><%= review.updated_at.strftime("%Y-%m-%d, %H:%M") %></span>
+    <% if user_signed_in? %>
+      <button class="btn" data-toggle="collapse" data-target="#link-reply-<%= review.id %>">Reply</button>
+      <div class="collapse" id="link-reply-<%= review.id %>">
+        <%= render partial: "replies/form", locals: { :review_id => review.id } %>
+      </div>
+    <% end %>
   </li>
+  <div class="container">
+    <div class="container">
+      <ul class="review-list">
+        <%= render review.replies %>
+      </ul>
+    </div>
+  </div>
 </div>

@@ -15,13 +15,15 @@ class BirdsController < ApplicationController
 
   def new
     @bird = Bird.new
+    @species = Species.all
   end
 
-  def edit; end
+  def edit
+    @species = Species.all
+  end
 
   def create
     @bird = Bird.new(bird_params)
-
     respond_to do |format|
       if @bird.save
         format.html { redirect_to @bird, notice: 'Bird was successfully created.' }
@@ -62,6 +64,7 @@ class BirdsController < ApplicationController
   end
 
   def bird_params
-    params.require(:bird).permit(:bird_name, :bird_info, :bird_price, :bird_voice, :species)
+    params.require(:bird).permit(:bird_name, :bird_info, :bird_price, :bird_voice, :species_id)
   end
+
 end

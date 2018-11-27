@@ -1,6 +1,7 @@
 class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :bird
+  has_many :replies
 
   scope :all_comments, ->{order(created_at: :desc)}
 

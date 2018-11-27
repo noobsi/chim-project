@@ -1,25 +1,34 @@
-<%= form_for(@bird_image) do |f| %>
-  <% if @bird_image.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bird_image.errors.count, "error") %> prohibited this bird_image from being saved:</h2>
+<div id="colorlib-page-double-top-padding">
+  <div id="colorlib-main">
+    <div class="colorlib-about">
+      <div class="colorlib-narrow-content">
 
-      <ul>
-      <% @bird_image.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <%= form_for(@bird_image) do |f| %>
+          <% if @bird_image.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@bird_image.errors.count, "error") %> prohibited this bird_image from being saved:</h2>
+
+              <ul>
+                <% @bird_image.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :image %><br>
+            <%= f.text_field :image %>
+          </div>
+          <div class="field">
+            <%= f.label :bird %><br>
+            <%= f.text_field :bird_id %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
   </div>
-  <div class="field">
-    <%= f.label :bird %><br>
-    <%= f.text_field :bird_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

@@ -1,0 +1,9 @@
+<div class="record" id="record-#{review.id}">
+  <li>
+    <%= avatar_for(reply.user) %>
+    <strong><%= reply.user.user_name %></strong>
+    <span><%= reply.content %></span><br>
+    <strong>Replied at </strong>
+    <span><%= reply.updated_at.strftime("%Y-%m-%d, %H:%M") %></span>
+  </li>
+</div>

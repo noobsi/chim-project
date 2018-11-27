@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   end
 
   has_many    :reviews, dependent: :destroy
+  has_many    :replies, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
 end

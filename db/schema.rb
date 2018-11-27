@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< ba44a5da64349368aba9606fca5fb7fd21a0d8c3
 ActiveRecord::Schema.define(version: 20181126232534) do
+=======
+ActiveRecord::Schema.define(version: 20181126145824) do
+>>>>>>> Reply
 
   create_table "bird_images", force: :cascade do |t|
     t.string   "image"
@@ -30,6 +34,7 @@ ActiveRecord::Schema.define(version: 20181126232534) do
     t.datetime "updated_at",              null: false
   end
 
+<<<<<<< ba44a5da64349368aba9606fca5fb7fd21a0d8c3
   create_table "comments", force: :cascade do |t|
     t.text    "description"
     t.integer "user_id"
@@ -39,6 +44,16 @@ ActiveRecord::Schema.define(version: 20181126232534) do
   add_index "comments", ["review_id"], name: "index_comments_on_review_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
+=======
+  create_table "replies", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "user_id",    default: 1, null: false
+    t.integer  "review_id",  default: 1, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+>>>>>>> Reply
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
     t.integer  "rating",            default: 0, null: false

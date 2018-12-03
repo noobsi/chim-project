@@ -1,4 +1,4 @@
-<%= form_for [@bird, Reply.new], class: "reply-form" do |f| %>
+<%= form_for [@bird, Reply.new] do |f| %>
   <div style="padding-top: 25px">
     <%= f.hidden_field :review_id, value: review_id %>
     <div class="review-form-text">
@@ -8,5 +8,4 @@
       <%= f.submit "Reply", class: "btn btn-primary" %>
     </div>
   </div>
-
 <% end %>

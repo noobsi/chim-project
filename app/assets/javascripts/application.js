@@ -14,7 +14,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//
 //= require jquery.min
 //= require jquery.easing.1.3
 //= require jquery.waypoints.min
@@ -30,4 +29,5 @@
 //= require auto_hide_header
 //= require search_bar
 //= require toastr.min
-//
+//= require modal
+

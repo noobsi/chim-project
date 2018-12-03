@@ -16,17 +16,6 @@
             </div>
         <% end %>
     <% else %>
-        <%= link_to new_user_session_path, :action => 'go' do %>
-            <div class="button-container-2" style="position: absolute; top: 0px; right: 0px;">
-                <span class="mas">ログイン</span>
-                <button type="button" name="Hover">ログイン</button>
-            </div>
-        <% end %>
-        <%= link_to new_user_registration_path, :action => 'go' do %>
-            <div class="button-container-1" style="position: absolute; top: 0px; right: 100px;">
-                <span class="mas">登録</span>
-                <button type="button" name="Hover">登録</button>
-            </div>
-        <% end %>     
+        <%= render partial: 'layouts/login_btt', layout: 'layouts/login_btt' %>
     <% end %>
 </header>

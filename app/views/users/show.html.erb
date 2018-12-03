@@ -1,4 +1,4 @@
-<div id="colorlib-page-top-padding">
+  <div id="colorlib-page-top-padding">
   <div id="colorlib-main">
     <div class="colorlib-about">
       <div class="colorlib-narrow-content">
@@ -8,80 +8,82 @@
         <div class="col-md-6">
           <div class="about-img animate-box" data-animate-effect="fadeInLeft">
             <div class="text-center">
-              <%= image_tag(@user.avatar, size: '600x600') %><br>
+              <%= image_tag(@user.avatar,  :width =>"100%", :height =>"100%") %>
             </div>
           </div>
         </div>
         <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-
-          <row>
-            <div class="col-md-3">
+          <div>
+            <div class="col-md-6">
               <h2 class="colorlib-heading">名前</h2>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-6">
               <% if @user.user_name.blank?%>
                 <h2 class="colorlib-heading-profile">Not Specified</h2>
               <% else %>
                 <h2 class="colorlib-heading-profile"><%= @user.user_name %></h2>
               <% end %>
             </div>
-          </row>
+          </div>
 
-          <row>
-            <div class="col-md-3">
+          <div>
+            <div class="col-md-6">
               <h2 class="colorlib-heading">メール</h2>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-6">
               <h2 class="colorlib-heading-profile"><%= @user.email %></h2>
             </div>
-          </row>
+          </div>
 
-          <row>
-            <div class="col-md-3">
+          <div>
+            <div class="col-md-6">
               <h2 class="colorlib-heading">電話番後</h2>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-6">
               <% if @user.phone.blank?%>
                 <h2 class="colorlib-heading-profile">Not Specified</h2>
               <% else %>
                 <h2 class="colorlib-heading-profile"><%= @user.phone %></h2>
               <% end %>
             </div>
-          </row>
+          </div>
 
-          <row>
-            <div class="col-md-3">
+          <div>
+            <div class="col-md-6">
               <h2 class="colorlib-heading">性別</h2>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-6">
               <% if @user.sex.blank?%>
                 <h2 class="colorlib-heading-profile">Not Specified</h2>
               <% else %>
                 <h2 class="colorlib-heading-profile"><%= @user.sex %></h2>
               <% end %>
             </div>
-          </row>
+          </div>
 
-          <row>
-            <div class="col-md-3">
+          <div>
+            <div class="col-md-6">
               <h2 class="colorlib-heading">誕生日</h2>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-6">
               <% if @user.birthdate.blank?%>
                 <h2 class="colorlib-heading-profile">Not Specified</h2>
               <% else %>
                 <h2 class="colorlib-heading-profile"><%= @user.birthdate.strftime('%F') %></h2>
               <% end %>
             </div>
-          </row>
+          </div>
 
-          <row>
+          <div>
             <% if user_signed_in? %>
               <% if current_user.id == @user.id %>
+                <div class="col-md-6">
                 <%= link_to "Edit Profile", edit_user_path, method: :get, class: "btn btn-primary" %>
+                </div>
               <% end %>
             <% end %>
-          </row>
+          </div>
+
         </div>
       </div>
     </div>

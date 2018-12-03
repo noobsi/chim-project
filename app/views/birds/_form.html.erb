@@ -1,37 +1,49 @@
-<%= form_for(@bird) do |f| %>
-  <% if @bird.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bird.errors.count, "error") %> prohibited this bird from being saved:</h2>
+<div id="colorlib-page">
+  <div id="colorlib-main-log">
+    <div id="colorlib-log">
+      <div id="colorlib-log-detail">
+        <h2><b>New Bird</b></h2>
 
-      <ul>
-      <% @bird.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <%= form_for(@bird) do |f| %>
+          <% if @bird.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@bird.errors.count, "error") %> prohibited this bird from being saved:</h2>
+
+              <ul>
+                <% @bird.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :bird_name %><br>
+            <%= f.text_field :bird_name %>
+          </div>
+          <div class="field">
+            <%= f.label :bird_info %><br>
+            <%= f.text_area :bird_info %>
+          </div>
+          <div class="field">
+            <%= f.label :bird_price %><br>
+            <%= f.number_field :bird_price %>
+          </div>
+          <div class="field">
+            <%= f.label :bird_voice %>
+            <%= f.file_field :bird_voice ,class:'upload-btn'%>
+          </div>
+          <div class="field">
+            <%= f.label :species_id %><br>
+            <% options = options_from_collection_for_select(@species, 'id', 'species_name') %>
+            <%= f.select :species_id,  options %>
+          </div>
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+          <%= link_to 'Back', birds_path %>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :bird_name %><br>
-    <%= f.text_field :bird_name %>
   </div>
-  <div class="field">
-    <%= f.label :bird_info %><br>
-    <%= f.text_area :bird_info %>
-  </div>
-  <div class="field">
-    <%= f.label :bird_price %><br>
-    <%= f.number_field :bird_price %>
-  </div>
-  <div class="field">
-    <%= f.label :bird_voice %><br>
-    <%= f.text_field :bird_voice %>
-  </div>
-  <div class="field">
-    <%= f.label :species %><br>
-    <%= f.text_field :species_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

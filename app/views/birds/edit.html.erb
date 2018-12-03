@@ -58,10 +58,9 @@
                       <%= f.label :bird_price %>
                       <%= f.number_field  :bird_price ,class:'form-control'%>
 
-                      <!--
-                      <%= f.label :species_id %><i>(please select species)</i><br/>
-                      <%= f.select :species_id, options_from_collection_for_select(Species.all, :id,:species_name,@bird.species.id) %><br/><br/>
-                      -->
+                      <%= f.label :species_id %><br>
+                      <% options = options_from_collection_for_select(@species, 'id', 'species_name') %>
+                      <%= f.select :species_id,  options %>
 
                       <%= f.label :bird_voice %>
                       <%= f.file_field :bird_voice ,class:'upload-btn'%>

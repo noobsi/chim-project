@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181020015137) do
+ActiveRecord::Schema.define(version: 20181126145824) do
 
   create_table "bird_images", force: :cascade do |t|
     t.string   "image"
@@ -30,22 +30,33 @@ ActiveRecord::Schema.define(version: 20181020015137) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.text     "comment"
-    t.integer  "rating",     default: 0, null: false
+  create_table "replies", force: :cascade do |t|
+    t.string   "content"
     t.integer  "user_id",    default: 1, null: false
-    t.integer  "bird_id",    default: 1, null: false
+    t.integer  "review_id",  default: 1, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "rating",            default: 0, null: false
+    t.integer  "rating_appearance", default: 0, null: false
+    t.integer  "rating_voice",      default: 0, null: false
+    t.integer  "rating_health",     default: 0, null: false
+    t.integer  "rating_price",      default: 0, null: false
+    t.integer  "rating_easy",       default: 0, null: false
+    t.integer  "user_id",           default: 1, null: false
+    t.integer  "bird_id",           default: 1, null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "species", force: :cascade do |t|
     t.string   "species_name"
     t.text     "species_info"
-    t.integer  "min_price",    default: 0
-    t.integer  "max_price",    default: 0
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|

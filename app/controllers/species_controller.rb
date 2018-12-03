@@ -20,6 +20,7 @@ class SpeciesController < ApplicationController
 
   # GET /species/1/edit
   def edit
+    @birds = Bird.where(species_id:@species.id)
   end
 
   # POST /species

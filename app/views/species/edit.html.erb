@@ -6,7 +6,7 @@
           <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
             <%if current_user.user_role == 1 %>
               <div class="container">
-                <h1>Edit bird</h1>
+                <h1>Edit species</h1>
                 <%= form_for(@species, html: {multipart: true}) do |f| %>
                   <hr>
                   <div class="row">
@@ -48,13 +48,12 @@
 
                     <!-- edit form column -->
                     <div class="col-md-6 personal-info">
-                      <h3>Bird info</h3>
-                      <%= f.label :species_name %>
+                      <h3>Species info</h3>
+                      <%= f.label :species_name %><br/><br/>
                       <%= f.text_field :species_name, class: 'form-control' %>
 
-                      <%= f.label :species_info %>
-                      <%= f.text_field :species_info, class: 'form-control' %>
-
+                      <%= f.label :species_info %><br/><br/>
+                      <%= f.text_area :species_info, :row => "10", class: 'form-control' %>
                       <div style="padding-top: 30px">
                         <%= f.submit "Save Changes", class: "btn btn-primary" %>
                       </div>
@@ -65,8 +64,6 @@
             <% else %>
               <h1>You don't have permission to edit this </h1>
             <% end %>
-
-
             <hr>
           </div>
         </div>

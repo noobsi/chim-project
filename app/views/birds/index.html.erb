@@ -24,10 +24,38 @@
 
             <div class="collapse" id="advance-search">
               <%= search_form_for @q do |f| %>
-                <%= f.label :bird_name_cont, class: "advanced-label" %>
-                <%= f.search_field :bird_name_cont, class: "search-advanced-form" %>
-                <%= f.label :species_name_cont, class: "advanced-label" %>
-                <%= f.search_field :species_species_name_cont, class: "search-advanced-form" %>
+                <div class="row">
+                  <div class="col-md-9">
+                    <%= f.label :bird_name_cont, class: "advanced-label" %>
+                  </div>
+                  <div class="col-md-3">
+                    <%= f.search_field :bird_name_cont, class: "search-advanced-form" %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-9">
+                    <%= f.label :species_name_cont, class: "advanced-label" %>
+                  </div>
+                  <div class="col-md-3">
+                    <%= f.search_field :species_species_name_cont, class: "search-advanced-form" %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-9">
+                    <%= f.label :bird_price_gteq, class: "advanced-label" %>
+                  </div>
+                  <div class="col-md-3">
+                    <%= f.search_field :bird_price_gteq, class: "search-advanced-form" %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-9">
+                    <%= f.label :bird_price_lteq, class: "advanced-label" %>
+                  </div>
+                  <div class="col-md-3">
+                    <%= f.search_field :bird_price_lteq, class: "search-advanced-form" %>
+                  </div>
+                </div>
                 <%= button_tag "Search", type: "submit", class: "btn btn-primary" do %>
                   <i class="fa fa-search" aria-hidden="true"></i>
                 <% end %>

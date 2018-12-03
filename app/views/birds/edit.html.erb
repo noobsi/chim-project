@@ -49,20 +49,20 @@
                     <!-- edit form column -->
                     <div class="col-md-6 personal-info">
                       <h3>Bird info</h3>
-                      <%= f.label :bird_name %>
+                      <%= f.label :bird_name %><br/><br/>
                       <%= f.text_field :bird_name, class: 'form-control' %>
 
-                      <%= f.label :bird_info %>
-                      <%= f.text_field :bird_info, class: 'form-control' %>
+                      <%= f.label :bird_info %><br/><br/>
+                      <%= f.text_area :bird_info, class: 'form-control' %>
 
-                      <%= f.label :bird_price %>
+                      <%= f.label :bird_price %><br/><br/>
                       <%= f.number_field  :bird_price ,class:'form-control'%>
 
-                      <%= f.label :species_id %><br>
-                      <% options = options_from_collection_for_select(@species, 'id', 'species_name') %>
-                      <%= f.select :species_id,  options %>
+                      <%= f.label :species_id %><br/><br/>
+                      <% options = options_from_collection_for_select(@species, 'id', 'species_name')%>
+                      <%= f.select :species_id,  options %><br/>
 
-                      <%= f.label :bird_voice %>
+                      <%= f.label :bird_voice %><br/><br/>
                       <%= f.file_field :bird_voice ,class:'upload-btn'%>
                       <div style="padding-top: 30px">
                         <%= f.submit "Save Changes", class: "btn btn-primary" %>

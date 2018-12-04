@@ -7,17 +7,19 @@ $(document).on 'turbolinks:load', ->
   # When the user clicks the button, open the modal
   overlay = document.getElementById("login_overlay");
 
-  btn.onclick = ->
-    modal.style.display = 'block'
-    overlay.style.display = 'block'
-    return
+  if (btn != null)
+    btn.onclick = ->
+      modal.style.display = 'block'
+      overlay.style.display = 'block'
+      return
 
   # When the user clicks on <span> (x), close the modal
 
-  span.onclick = ->
-    modal.style.display = 'none'
-    overlay.style.display = 'none'
-    return
+  if (span != null)
+    span.onclick = ->
+      modal.style.display = 'none'
+      overlay.style.display = 'none'
+      return
 
   # When the user clicks anywhere outside of the modal, close it
   window.onclick = (event) ->

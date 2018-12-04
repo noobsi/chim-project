@@ -23,7 +23,6 @@
 //= require jquery.countTo
 //= require main
 //= require bootstrap.min
-//= require google_map
 //= require modernizr-2.6.2.min
 //= require respond.min
 //= require auto_hide_header

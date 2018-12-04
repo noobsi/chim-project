@@ -14,6 +14,23 @@ class Bird < ActiveRecord::Base
     end
   end
 
+  def rating_easy
+    if reviews.empty?
+      0
+    else
+      (reviews.average(:rating_easy)/10).round(1)
+    end
+  end
+
+  def rating_price
+    if reviews.empty?
+      0
+    else
+      (reviews.average(:rating_price)/10).round(1)
+    end
+  end
+
+
   def review_user_present? id
     reviews.find_by(user: id).present?
   end

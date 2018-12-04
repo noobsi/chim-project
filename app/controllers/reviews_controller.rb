@@ -62,7 +62,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:comment, :rating, :rating_price, :rating_easy)
   end
 
   def find_bird

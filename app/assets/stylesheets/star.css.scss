@@ -13,7 +13,7 @@ $icon-star--light: 'data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%2
 
 
 
-.ratingControl {
+.price_ratingControl, .easy_ratingControl, .ratingControl {
     position: relative;
     width: $ratingControl-star-width * $ratingControl-star-count;
     height: $ratingControl-star-size;
@@ -24,6 +24,7 @@ $icon-star--light: 'data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%2
         visibility: hidden;
     }
 }
+
 .ratingControl-stars {
     position: absolute;
     top: 0;
@@ -55,6 +56,71 @@ $icon-star--light: 'data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%2
           // uses datauri, but image is actually being pulled from here: #{$icon-path}/star--filled--light.svg
     }
 }
+
+.easy_ratingControl-stars {
+    position: absolute;
+    top: 0;
+    width: $ratingControl-star-width;
+    height: $ratingControl-star-size;
+    background-image: url($icon-star);
+    // uses datauri, but image is actually being pulled from here: '#{$icon-path}/star--empty.svg';
+    background-size: auto $ratingControl-star-size;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+    // hover effect applied to the hovered star and all preceeding stars (and if the radio button is checked)
+    &:hover,
+    .easy_ratingControl-stars:hover ~ &,
+    input:checked ~ & {
+        background-image: url($icon-star--filled);
+        // uses datauri, but image is actually being pulled from here: #{$icon-path}/star--filled.svg
+    }
+
+    // displays a slightly different coloured star when someone is actively clicking the item
+    &:active,
+    .easy_ratingControl-stars:active ~ &,
+    input:checked ~ &:active {
+        background-image: url($icon-star--light);
+        // uses datauri, but image is actually being pulled from here: #{$icon-path}/star--filled--light.svg
+    }
+}
+
+.price_ratingControl-stars {
+    position: absolute;
+    top: 0;
+    width: $ratingControl-star-width;
+    height: $ratingControl-star-size;
+    background-image: url($icon-star);
+    // uses datauri, but image is actually being pulled from here: '#{$icon-path}/star--empty.svg';
+    background-size: auto $ratingControl-star-size;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+    // hover effect applied to the hovered star and all preceeding stars (and if the radio button is checked)
+    &:hover,
+    .price_ratingControl-stars:hover ~ &,
+    input:checked ~ & {
+        background-image: url($icon-star--filled);
+        // uses datauri, but image is actually being pulled from here: #{$icon-path}/star--filled.svg
+    }
+
+    // displays a slightly different coloured star when someone is actively clicking the item
+    &:active,
+    .price_ratingControl-stars:active ~ &,
+    input:checked ~ &:active {
+        background-image: url($icon-star--light);
+        // uses datauri, but image is actually being pulled from here: #{$icon-path}/star--filled--light.svg
+    }
+}
+
 .ratingControl-stars--05 { left: $ratingControl-star-width * 0; }
 .ratingControl-stars--1  { left: $ratingControl-star-width * 0; }
 .ratingControl-stars--15 { left: $ratingControl-star-width * 1; }
@@ -72,4 +138,16 @@ $icon-star--light: 'data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%2
 
 .demo {
   padding: 20px;
+}
+
+.rating_label{
+    position: absolute;
+    right:0px;
+}
+
+.rating_label_middle{
+    text-align: center;
+    font-size:28px;
+    position: relative;
+    right:0px;
 }

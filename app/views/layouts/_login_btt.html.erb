@@ -15,8 +15,8 @@
     <div class="modal_container">
 
         <ul class="tab-group">
-          <li class="tab active"><a href="#login" class="li_a">Log In</a></li>
-          <li class="tab"><a href="#signup" class="li_a">Sign Up</a></li>
+          <li class="tab active"><a href="#login" class="li_a">ログイン</a></li>
+          <li class="tab"><a href="#signup" class="li_a">サインアップ</a></li>
         </ul>
 
         <div class="tab-content">
@@ -24,13 +24,13 @@
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
               <div class="field">
-                <%= f.label(:email,:class=>'modal_label')%><br/><br/>
+                <%= f.label "メール" ,:class=>'modal_label'%><br/><br/>
                 <%= f.email_field(:email, autofocus: true, :class =>'modal_input' )%>
               </div>
               <br/>
 
               <div class="field">
-                <%= f.label :password ,:class=>'modal_label' %><br/><br/>
+                <%= f.label "パスワード" ,:class=>'modal_label'%><br/><br/>
                 <%= f.password_field :password, autocomplete: "off" , :class =>'modal_input'%>
               </div>
               <br/>
@@ -43,7 +43,7 @@
 
                   </div>
                   <div class = 'remember_me_text'>
-                    <%= f.label :remember_me ,:class=>'modal_label'%>
+                    <%= f.label "アカウント覚える" ,:class=>'modal_label'%>
                   </div>
 
                 </div>
@@ -53,7 +53,7 @@
               <br/><br/><br/>
 
               <div class = 'login_confirm_btt'>
-                <%= f.submit "LOG IN", :class =>'modal_input' %>
+                <%= f.submit "ログイン", :class =>'modal_input' %>
               </div>
             <% end %>
           </div>
@@ -64,12 +64,12 @@
               <%= devise_error_messages! %>
 
               <div class="field">
-                <%= f.label :email ,:class=>'modal_label' %><br/><br/>
+                <%= f.label "メール" ,:class=>'modal_label'%><br/><br/>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", :class =>'modal_input' %>
               </div>
               <br/>
               <div class="field">
-                <%= f.label :password ,:class=>'modal_label' %><br/><br/>
+                <%= f.label "パスワード" ,:class=>'modal_label'%><br/><br/>
                 <% if @minimum_password_length %>
                   <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %>
@@ -77,12 +77,12 @@
               </div>
               <br/>
               <div class="field">
-                <%= f.label :password_confirmation,:class=>'modal_label' %><br/><br/>
+                <%= f.label "パスワード確認",:class=>'modal_label'%><br/><br/>
                 <%= f.password_field :password_confirmation, autocomplete: "new-password" , :class =>'modal_input'%>
               </div>
               <br/><br/>
               <div class="login_confirm_btt">
-                  <%= f.submit "SIGN UP", :class =>'modal_input' %>
+                  <%= f.submit "サインアップ", :class =>'modal_input' %>
               </div>
             <% end %>
           </div>

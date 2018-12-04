@@ -1,15 +1,15 @@
 <div class="record" id="record-#{review.id}">
   <li>
     <%= avatar_for(review.user) %>
-    <strong><%= review.user.user_name %></strong> reviewed at&ensp;
-    <span><%= review.updated_at.localtime.strftime("%d-%m-%Y, %H:%M") %></span><br>
-    <strong>Rating&ensp;</strong>
+    <strong><%= review.user.user_name %></strong> は&ensp;
+    <span><%= review.updated_at.localtime.strftime("%d-%m-%Y, %H:%M") %> に評価しました</span><br>
+    <strong>スコア&ensp;</strong>
     <span><%= review.rating_float %></span>
     <%= render partial: "reviews/rating", locals: {rating: review.rating_float} %>
     <span><%= review.comment %></span><br>
     <% if user_signed_in? %>
       <button class="btn btn-link" data-toggle="collapse" data-target="#link-reply-<%= review.id %>">
-        <span style="padding-left: 85px; font-size:larger;">Reply</span>
+        <span style="padding-left: 85px; font-size:larger;">返信</span>
       </button>
       <div class="collapse" id="link-reply-<%= review.id %>">
         <%= render partial: "replies/form", locals: { :review_id => review.id } %>

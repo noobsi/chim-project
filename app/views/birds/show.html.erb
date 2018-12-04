@@ -42,28 +42,39 @@
         </div>
         <div class="col-md-6">
           <div class="about-desc">
+
             <%= link_to @bird.species, method: :get do %>
               <span class="heading-meta"><%= @bird.species.species_name %></span>
             <% end %>
             <h2 class="colorlib-heading"><%= @bird.bird_name %></h2>
-            <div class="review-rating-big">
-              <div class="update-rating"><strong>Average rating: <%= @bird.rating %>/5</strong></div>
-              <%= render partial: "reviews/rating", locals: {rating: @bird.rating} %>
-            </div>
-            <p><%= @bird.bird_info %></p>
-          </div>
 
-          <div class="about-desc">
+            <div class="review-rating-big">
+              <div class="update-rating"><strong>Average rating: <%= ((@bird.rating+@bird.rating_easy+@bird.rating_price)/3).round(1) %>/5</strong></div>
+              <%= render partial: "reviews/rating", locals: {rating: ((@bird.rating+@bird.rating_easy+@bird.rating_price)/3).round(1) } %>
+
+            </div>
+            <div class="about-desc">
+            <div class = 'col-md-1'>Voice:</div>
+            <div class = 'col-md-3'><%= render partial: "reviews/rating", locals: {rating: @bird.rating } %></div>
+            <div class = 'col-md-1'>Price:</div>
+            <div class = 'col-md-3'><%= render partial: "reviews/rating", locals: {rating: @bird.rating_price } %></div>
+            <div class = 'col-md-1'>Easy:</div>
+            <div class = 'col-md-3'><%= render partial: "reviews/rating", locals: {rating: @bird.rating_easy } %></div>
+            </div>
+          </div>
+            <div class="about-desc">
+<br><br>
+            <p><%= @bird.bird_info %></p>
+
             <span class="heading-meta-kanji">値段:</span>
             <h2>¥ <%= @bird.bird_price %>‎</h2>
-          </div>
 
-          <div class="about-desc">
             <span class="heading-meta-kanji">音声:</span>
             <audio controls>
               <source src=<%= asset_path(@bird.bird_voice) %> type="audio/mpeg">
               This bird has no voice data.
             </audio>
+            </div>
           </div>
         </div>
         <% if user_signed_in? %>

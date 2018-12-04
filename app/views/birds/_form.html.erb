@@ -2,7 +2,7 @@
   <div id="colorlib-main-log">
     <div id="colorlib-log">
       <div id="colorlib-log-detail">
-        <h2><b>New Bird</b></h2>
+        <h2><b>新しい鳥</b></h2>
 
         <%= form_for(@bird) do |f| %>
           <% if @bird.errors.any? %>
@@ -18,30 +18,30 @@
           <% end %>
 
           <div class="field">
-            <%= f.label :bird_name %><br>
+            <%= f.label :bird_name, "名" %><br>
             <%= f.text_field :bird_name %>
           </div>
           <div class="field">
-            <%= f.label :bird_info %><br>
+            <%= f.label :bird_info, "情報" %><br>
             <%= f.text_area :bird_info %>
           </div>
           <div class="field">
-            <%= f.label :bird_price %><br>
+            <%= f.label :bird_price, "値段"%><br>
             <%= f.number_field :bird_price %>
           </div>
           <div class="field">
-            <%= f.label :bird_voice %>
+            <%= f.label :bird_voice, "声" %>
             <%= f.file_field :bird_voice ,class:'upload-btn'%>
           </div>
           <div class="field">
-            <%= f.label :species_id %><br>
+            <%= f.label :species_id, "種類" %><br>
             <% options = options_from_collection_for_select(@species, 'id', 'species_name') %>
             <%= f.select :species_id,  options %>
           </div>
           <div class="actions">
-            <%= f.submit %>
+            <%= f.submit "作成"%>
           </div>
-          <%= link_to 'Back', birds_path %>
+          <%= link_to 'バック', birds_path %>
         <% end %>
       </div>
     </div>

@@ -5,18 +5,18 @@
         <div class="row">
           <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
             <% if params[:q] %>
-              <h2 class="colorlib-heading">Results</h2>
+              <h2 class="colorlib-heading">結果</h2>
             <% else %>
-              <span class="heading-meta">Birds</span>
-              <h2 class="colorlib-heading">All birds</h2>
+              <span class="heading-meta-kanji">鳥</span>
+              <h2 class="colorlib-heading">鳥概要</h2>
             <% end %>
 
-            <%= content_tag :th, sort_link(@q, :bird_name, "Sort by name", {}, { class: "btn btn-primary", method: :get }) %>
-            <%= button_tag "Advanced search", class: "btn btn-primary", data: {toggle: "collapse", target: "#advance-search"} %>
+            <%= content_tag :th, sort_link(@q, :bird_name, "名によるソート", {}, { class: "btn btn-primary", method: :get }) %>
+            <%= button_tag "詳細検索", class: "btn btn-primary", data: {toggle: "collapse", target: "#advance-search"} %>
 
             <% if user_signed_in? %>
               <% if current_user.user_role==1 %>
-                <%= link_to "Add new bird", new_bird_path, method: :get, class: "btn btn-primary" %>
+                <%= link_to "鳥登録", new_bird_path, method: :get, class: "btn btn-primary" %>
               <% end %>
             <% end %>
 
@@ -24,7 +24,7 @@
               <%= search_form_for @q do |f| %>
                 <div class="row">
                   <div class="col-md-6">
-                    <%= f.label "Bird contains", class: "advanced-label" %>
+                    <%= f.label "鳥がある", class: "advanced-label" %>
                   </div>
                   <div class="col-md-6">
                     <%= f.search_field :bird_name_cont, class: "search-advanced-form" %>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <%= f.label "Species contains", class: "advanced-label" %>
+                    <%= f.label "種類がある", class: "advanced-label" %>
                   </div>
                   <div class="col-md-6">
                     <%= f.search_field :species_species_name_cont, class: "search-advanced-form" %>
@@ -40,13 +40,13 @@
                 </div>
                 <div class="row">
                   <div class="col-md-3">
-                    <%= f.label "Price min", class: "advanced-label" %>
+                    <%= f.label "最小値段", class: "advanced-label" %>
                   </div>
                   <div class="col-md-5">
                     <%= f.search_field :bird_price_gteq, class: "search-advanced-price-form" %>
                   </div>
                   <div class="col-md-3">
-                    <%= f.label "Price max", class: "advanced-label" %>
+                    <%= f.label "最大値段", class: "advanced-label" %>
                   </div>
                   <div class="col-md-1">
                     <%= f.search_field :bird_price_lteq, class: "search-advanced-price-form" %>
@@ -64,11 +64,11 @@
           <% if @birds.present? %>
             <h2 class="heading-results">
               <%= @birds.total_count %>
-              <% if @birds.total_count == 1 %> result<% else %> results<% end %>
+              <% if @birds.total_count == 1 %> 結果<% else %> 結果<% end %>
             </h2>
             <%= render partial: "birds/bird_index", layout: "birds/bird_index" %>
           <% else %>
-            <p class="heading-results">Sorry, no birds found. Try another keywords.</p>
+            <p class="heading-results">ごめんなさい。結果がありません。他のキーワードを入力して見てください。</p>
           <% end %>
         </div>
       </div>

@@ -40,10 +40,10 @@
           <div class="about-desc">
             <h2 class="colorlib-heading"><%= @species.species_name %></h2>
             <div class = "review-rating-big">
-               <strong><%= @species.review_count %> users has reviewed <%= @species.species_name %></strong>
+               <strong><%= @species.review_count %> ユーザは <%= @species.species_name %> を評価しました</strong>
             </div>
             <div class = "review-rating-big">
-              <div class="update-rating"><strong>Average rating: <%= @species.rating %>/5</strong></div>
+              <div class="update-rating"><strong>平均スコア: <%= @species.rating %>/5</strong></div>
               <%= render partial: "reviews/rating", locals: {rating: @species.rating} %>
             </div>
             <p><%= @species.species_info %></p>
@@ -58,7 +58,7 @@
           </div>
           <% if user_signed_in? %>
           <% if current_user.user_role==1 %>
-            <%= link_to "Edit Specie", edit_species_path(@species), method: :get, class: "btn btn-primary" %>
+            <%= link_to "種類編集", edit_species_path(@species), method: :get, class: "btn btn-primary" %>
           <% end %>
           <% end %>
         </div>

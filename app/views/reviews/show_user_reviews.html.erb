@@ -7,9 +7,9 @@
             <div class="blog-entry">
               <% if user_signed_in? %>
                 <span class="heading-meta"><%= current_user.user_name %></span>
-                <h2 class="colorlib-heading">Review History</h2>
+                <h2 class="colorlib-heading">レビューの歴史</h2>
                 <% if Review.where(user_id: current_user.id).count == 0 %>
-                  <h1>You haven't made any review</h1>
+                  <h1>今はレビューがありません</h1>
                 <% end %>
                 <% Review.where(user_id: current_user.id).each do |review| %>
                   <div class="row row-bottom-padded-md">
@@ -24,17 +24,17 @@
                       <div class="about-desc">
                         <h3><%= User.where(id:review.user_id).first.user_name %></h3>
                         <span><%= review.comment%></span><br>
-                        <strong>Rating</strong>
+                        <strong>スコア</strong>
                         <span><%= review.rating_float %></span>
                         <%= render partial: "reviews/rating", locals: {rating: review.rating_float} %>
-                        <strong>Reviewed at </strong>
+                        <strong>評価時刻 </strong>
                         <span><%= review.updated_at.strftime("%Y-%m-%d, %H:%M") %></span>
                       </div>
                     </div>
                   </div>
                 <% end %>
               <% else %>
-                <h1>You are not signed in</h1>
+                <h1>サインが必要です</h1>
               <% end %>
             </div>
           </div>

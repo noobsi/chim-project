@@ -23,13 +23,13 @@
             <div class="collapse" id="advance-search">
               <%= search_form_for @q do |f| %>
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-6"><br>
                     <%= f.label "Bird contains", class: "advanced-label" %>
-                  </div>
+                  </div><br>
                   <div class="col-md-6">
                     <%= f.search_field :bird_name_cont, class: "search-advanced-form" %>
                   </div>
-                </div>
+                </div><br>
                 <div class="row">
                   <div class="col-md-6">
                     <%= f.label "Species contains", class: "advanced-label" %>
@@ -37,19 +37,21 @@
                   <div class="col-md-6">
                     <%= f.search_field :species_species_name_cont, class: "search-advanced-form" %>
                   </div>
-                </div>
+                </div><br>
                 <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-md-6">
                     <%= f.label "Price min", class: "advanced-label" %>
                   </div>
-                  <div class="col-md-5">
-                    <%= f.search_field :bird_price_gteq, class: "search-advanced-price-form" %>
-                  </div>
-                  <div class="col-md-3">
+                  <div class="col-md-6">
+                    <%= f.search_field :bird_price_gteq, class: "search-advanced-form" %>
+                  </div><br>
+                </div><br>
+                <div class="row">
+                  <div class="col-md-6">
                     <%= f.label "Price max", class: "advanced-label" %>
                   </div>
-                  <div class="col-md-1">
-                    <%= f.search_field :bird_price_lteq, class: "search-advanced-price-form" %>
+                  <div class="col-md-6">
+                    <%= f.search_field :bird_price_lteq, class: "search-advanced-form" %>
                   </div>
                 </div>
                 <%= button_tag "Search", type: "submit", class: "btn btn-primary" do %>

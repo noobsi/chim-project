@@ -49,16 +49,16 @@
             <h2 class="colorlib-heading"><%= @bird.bird_name %></h2>
 
             <div class="review-rating-big">
-              <div class="update-rating"><strong>Average rating: <%= ((@bird.rating+@bird.rating_easy+@bird.rating_price)/3).round(1) %>/5</strong></div>
+              <div class="update-rating"><strong>平均スコア: <%= ((@bird.rating+@bird.rating_easy+@bird.rating_price)/3).round(1) %>/5</strong></div>
               <%= render partial: "reviews/rating", locals: {rating: ((@bird.rating+@bird.rating_easy+@bird.rating_price)/3).round(1) } %>
 
             </div>
             <div class="about-desc">
-            <div class = 'col-md-1'>Voice:</div>
+            <div class = 'col-md-1'>声:</div>
             <div class = 'col-md-3'><%= render partial: "reviews/rating", locals: {rating: @bird.rating } %></div>
-            <div class = 'col-md-1'>Price:</div>
+            <div class = 'col-md-1'>価:</div>
             <div class = 'col-md-3'><%= render partial: "reviews/rating", locals: {rating: @bird.rating_price } %></div>
-            <div class = 'col-md-1'>Easy:</div>
+            <div class = 'col-md-1'>易:</div>
             <div class = 'col-md-3'><%= render partial: "reviews/rating", locals: {rating: @bird.rating_easy } %></div>
             </div>
           </div>
@@ -72,7 +72,7 @@
             <span class="heading-meta-kanji">音声:</span>
             <audio controls>
               <source src=<%= asset_path(@bird.bird_voice) %> type="audio/mpeg">
-              This bird has no voice data.
+              声のデータがありません
             </audio>
             </div>
           </div>
@@ -82,8 +82,8 @@
 
             <%#= link_to "Upload image", new_bird_image_path(), method: :get, class: "btn btn-primary" %>
 
-            <%= link_to "Edit Bird", edit_bird_path(@bird), method: :get, class: "btn btn-primary" %>
-            <%= link_to "Delete Bird", @bird, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-primary" %>
+            <%= link_to "鳥編集", edit_bird_path(@bird), method: :get, class: "btn btn-primary" %>
+            <%= link_to "鳥削除", @bird, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-primary" %>
 
           <% end %>
         <% end %>
@@ -101,7 +101,7 @@
           </div>
 
           <div class="container">
-            <strong><%= @bird.review_count %> users has reviewed <%= @bird.bird_name %></strong>
+            <strong><%= @bird.review_count %> ユーザは <%= @bird.bird_name %> を評価しました</strong>
             <%= paginate @reviews %>
             <ul class="review-list">
               <%= render @reviews %>

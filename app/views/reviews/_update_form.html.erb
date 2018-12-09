@@ -2,14 +2,14 @@
   <div class="container">
     <% b = @bird.review_user(current_user.id) %>
     <h4>
-      Last reviewed at <%= b.updated_at.strftime("%Y-%m-%d, %H:%M") %>
+      最新レビュー <%= b.updated_at.strftime("%Y-%m-%d, %H:%M") %>
     </h4>
     <div class="review-form-text">
       <%= f.text_area :comment, class: "form-control" %>
     </div>
     <div class="demo">
       <div class="ratingControl rating_label_middle">
-        Voice:
+        声:
       </div>
       <div class="ratingControl">
         <input type="radio" id="rating-5" name="review[rating]" value="50" <% if b.rating == 50 %> checked <% end %>>
@@ -36,7 +36,7 @@
     </div>
     <div class="demo">
       <div class="ratingControl rating_label_middle">
-        Price:
+        値段:
       </div>
       <div class="price_ratingControl">
         <input type="radio" id="price_rating-5" name="review[rating_price]" value="50" <% if b.rating_price == 50 %> checked <% end %>>
@@ -63,7 +63,7 @@
     </div>
     <div class="demo">
       <div class="ratingControl rating_label_middle">
-        Easy to raise:
+        飼い易さ:
       </div>
       <div class="easy_ratingControl">
         <input type="radio" id="easy_rating-5" name="review[rating_easy]" value="50" <% if b.rating_easy == 50 %> checked <% end %>>
@@ -89,7 +89,7 @@
       </div>
     </div>
     <div class="review-form-submit">
-      <%= f.submit "Update", class: "btn btn-primary" %>
+      <%= f.submit "更新する", class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>
